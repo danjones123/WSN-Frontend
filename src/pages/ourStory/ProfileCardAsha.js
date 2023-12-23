@@ -40,14 +40,16 @@ export default function ProfileCard() {
       sx={{
         width: "90%",
         margin: "0 auto",
+        marginBottom: "2%",
         padding: "5%",
         minWidth: 150,
         maxWidth: 1500,
-        maxHeight: expanded ? "none" : "150px",
+        // maxHeight: expanded ? "none" : "150px",
+        paddingBottom: "0px",
       }}
     >
-      <Grid container spacing={2}>
-        <Grid item xs={4} sm={4}>
+      <Grid container>
+        <Grid item xs={12} sm={4}>
           <CardMedia
             component="img"
             style={{
@@ -60,7 +62,7 @@ export default function ProfileCard() {
             alt="AshaMaria"
           />
         </Grid>
-        <Grid item xs={8} sm={8}>
+        <Grid item xs={12} sm={8}>
           <CardContent>
             <CardHeader
               title="Asha Maria Nathan"
@@ -74,26 +76,29 @@ export default function ProfileCard() {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid container justifyContent="center">
-          <Grid item>
-            <CardContent>
-              <CardActions disableSpacing>
-                <ExpandMore
-                  objectPosition="center"
-                  expand={expanded}
-                  onClick={handleExpandClick}
-                  aria-expanded={expanded}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </ExpandMore>
-              </CardActions>
-            </CardContent>
-          </Grid>
+      </Grid>
+      <Grid container justifyContent="center">
+        <Grid item>
+          <CardContent>
+            <CardActions disableSpacing>
+              <ExpandMore
+                objectPosition="center"
+                expand={expanded}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+          </CardContent>
         </Grid>
-        <Grid item xs={100} sm={50}>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent style={{ width: "100%", textAlign: "center" }}>
+      </Grid>
+
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent style={{ width: "90%", textAlign: "center" }}>
+          <Grid container justifyContent="center">
+            <Grid item xs={12} sm={4}>
               <Typography paddingBottom={"0.5%"} variant="h5" color="#2a4e72">
                 Work Experience
               </Typography>
@@ -101,7 +106,7 @@ export default function ProfileCard() {
                 Nathan and Nathan - Human Resources{" "}
                 <Typography
                   variant="inherit"
-                  component="span"
+                  // component="span"
                   style={{ fontSize: "0.9rem" }}
                 >
                   Present
@@ -130,6 +135,8 @@ export default function ProfileCard() {
                 <br />
                 Formation of policies and structure of the company
               </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
                 Educational History
               </Typography>
@@ -144,7 +151,7 @@ export default function ProfileCard() {
                 </Typography>
               </Typography>
               <Typography variant="body">
-                Certifief CSR Practioner CSE
+                Certified CSR Practioner CSE
                 <br />
                 Certifed Psychometric Test Administrator SHL
                 <br />
@@ -152,6 +159,8 @@ export default function ProfileCard() {
                 <br />
                 Certified ESG Consultant
               </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
                 Hobbies and Interests
               </Typography>
@@ -164,10 +173,10 @@ export default function ProfileCard() {
                 <br />
                 Creativity
               </Typography>
-            </CardContent>
-          </Collapse>
-        </Grid>
-      </Grid>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Collapse>
     </Card>
   );
 }

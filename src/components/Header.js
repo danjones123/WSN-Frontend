@@ -10,9 +10,11 @@ import {
   Drawer,
   List,
   ListItem,
+  Box,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import Logo from "../assets/Logo.PNG";
 
 const Header = (props) => {
   const { title } = props;
@@ -47,84 +49,97 @@ const Header = (props) => {
   );
 
   return (
-    <Container maxWidth="lg">
-      <React.Fragment>
-        <Toolbar
-          position="fixed"
-          sx={{ borderBottom: 1, borderColor: "divider" }}
-        >
-          <Hidden smUp>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h2"
-              variant="h5"
-              color="inherit"
-              align="center"
-              noWrap
-              sx={{ flex: 1 }}
-            >
-              {title}
-            </Typography>
-          </Hidden>
-
-          <Hidden smDown>
-            <Button onClick={() => nav("/")} size="small">
-              Home
-            </Button>
-            <Button onClick={() => nav("/story")} size="small">
-              Our Story
-            </Button>
-            <Button onClick={() => nav("/events")} size="small">
-              Events
-            </Button>
-            <Typography
-              component="h2"
-              variant="h5"
-              color="inherit"
-              align="center"
-              noWrap
-              sx={{ flex: 1 }}
-            >
-              {title}
-            </Typography>
-            <Button onClick={() => nav("/blog")} size="small">
-              Blog
-            </Button>
-            <Button onClick={() => nav("/resources")} size="small">
-              Resources
-            </Button>
-            <Button onClick={() => nav("/")} size="small">
-              Contact Us
-            </Button>
-          </Hidden>
-        </Toolbar>
-        <Hidden smDown>
+    <div>
+      <Box
+        component="img"
+        sx={{
+          // height: 150,
+          // width: "auto",
+          maxHeight: { xs: 50, md: 100 },
+          maxWidth: { xs: "auto", md: "auto" },
+        }}
+        alt="The house from the offer."
+        src={Logo}
+      />
+      <Container maxWidth="lg">
+        <React.Fragment>
           <Toolbar
-            component="nav"
-            variant="dense"
-            sx={{ justifyContent: "space-between", overflowX: "auto" }}
-          ></Toolbar>
-        </Hidden>
-        <Hidden smUp>
-          <Drawer
-            variant="temporary"
-            anchor="left"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
+            position="fixed"
+            sx={{ borderBottom: 1, borderColor: "divider" }}
           >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </React.Fragment>
-    </Container>
+            <Hidden smUp>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography
+                component="h2"
+                variant="h5"
+                color="inherit"
+                align="center"
+                noWrap
+                sx={{ flex: 1 }}
+              >
+                {title}
+              </Typography>
+            </Hidden>
+
+            <Hidden smDown>
+              <Button onClick={() => nav("/")} size="small">
+                Home
+              </Button>
+              <Button onClick={() => nav("/story")} size="small">
+                Our Story
+              </Button>
+              <Button onClick={() => nav("/events")} size="small">
+                Events
+              </Button>
+              <Typography
+                component="h2"
+                variant="h5"
+                color="inherit"
+                align="center"
+                noWrap
+                sx={{ flex: 1 }}
+              >
+                {title}
+              </Typography>
+              <Button onClick={() => nav("/blog")} size="small">
+                Blog
+              </Button>
+              <Button onClick={() => nav("/resources")} size="small">
+                Resources
+              </Button>
+              <Button onClick={() => nav("/")} size="small">
+                Contact Us
+              </Button>
+            </Hidden>
+          </Toolbar>
+          <Hidden smDown>
+            <Toolbar
+              component="nav"
+              variant="dense"
+              sx={{ justifyContent: "space-between", overflowX: "auto" }}
+            ></Toolbar>
+          </Hidden>
+          <Hidden smUp>
+            <Drawer
+              variant="temporary"
+              anchor="left"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+            >
+              {drawer}
+            </Drawer>
+          </Hidden>
+        </React.Fragment>
+      </Container>
+    </div>
   );
 };
 
