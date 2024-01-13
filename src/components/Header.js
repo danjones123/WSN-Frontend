@@ -58,7 +58,7 @@ const Header = (props) => {
           maxHeight: { xs: 50, md: 100 },
           maxWidth: { xs: "auto", md: "auto" },
         }}
-        alt="The house from the offer."
+        alt="WSN Logo"
         src={Logo}
       />
       <Container maxWidth="lg">

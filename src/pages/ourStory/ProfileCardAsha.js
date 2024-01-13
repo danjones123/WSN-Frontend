@@ -28,6 +28,15 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+const styles = {
+  cardcontent: {
+    padding: 0,
+    "&:last-child": {
+      paddingBottom: 0,
+    },
+  },
+};
+
 export default function ProfileCard() {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -37,24 +46,27 @@ export default function ProfileCard() {
 
   return (
     <Card
+      id="full-card"
       sx={{
         width: "90%",
         margin: "0 auto",
         marginBottom: "2%",
-        padding: "5%",
+        // padding: "5%",
         minWidth: 150,
         maxWidth: 1500,
         // maxHeight: expanded ? "none" : "150px",
         paddingBottom: "0px",
+        backgroundColor: "#f0f0f0",
       }}
     >
-      <Grid container>
-        <Grid item xs={12} sm={4}>
+      <Grid container id="main-content-container" style={{ marginTop: "10px" }}>
+        <Grid item xs={12} sm={3} id="image-grid">
           <CardMedia
+            id="image-card"
             component="img"
             style={{
               width: "auto",
-              height: "150px",
+              height: "200px",
               objectFit: "cover",
               objectPosition: "top",
             }}
@@ -62,14 +74,19 @@ export default function ProfileCard() {
             alt="AshaMaria"
           />
         </Grid>
-        <Grid item xs={12} sm={8}>
-          <CardContent>
+        <Grid item xs={12} sm={9} id="top-body-grid">
+          <CardContent id="top-body-card">
             <CardHeader
+              id="top-body-card-header"
               title="Asha Maria Nathan"
               subheader="ESG/CSR Director"
               sx={{ color: "#2a4e72" }}
             />
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              id="top-body-main-text"
+            >
               My current position as Director CSR for the last 8 years has
               shaped me into the person most aligned with my value system. The
               need for initiatives of Social impact is at an all time high.
@@ -77,18 +94,32 @@ export default function ProfileCard() {
           </CardContent>
         </Grid>
       </Grid>
-      <Grid container justifyContent="center">
-        <Grid item>
-          <CardContent>
-            <CardActions disableSpacing>
+      <Grid
+        container
+        justifyContent="center"
+        id="dropdown-button-grid-container"
+        maxHeight={"30px"}
+      >
+        <Grid item id="dropdown-button-grid-item">
+          <CardContent
+            id="dropdown-button-card"
+            style={{ paddingTop: "0px", paddingBottom: "0px" }}
+          >
+            <CardActions
+              disableSpacing
+              id="dropdown-button-actions"
+              style={{ paddingTop: "0px", paddingBottom: "0px" }}
+            >
               <ExpandMore
+                id="dropdown-button-styled"
                 objectPosition="center"
                 expand={expanded}
                 onClick={handleExpandClick}
                 aria-expanded={expanded}
                 aria-label="show more"
+                style={{ paddingTop: "0px", paddingBottom: "0px" }}
               >
-                <ExpandMoreIcon />
+                <ExpandMoreIcon id="dropdown-button-icon" />
               </ExpandMore>
             </CardActions>
           </CardContent>
@@ -96,9 +127,12 @@ export default function ProfileCard() {
       </Grid>
 
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent style={{ width: "90%", textAlign: "center" }}>
-          <Grid container justifyContent="center">
-            <Grid item xs={12} sm={4}>
+        <CardContent
+          id="expanded-card-content"
+          style={{ width: "90%", textAlign: "center" }}
+        >
+          <Grid id="expanded-grid-container" container justifyContent="center">
+            <Grid id="expanded-grid-work-experience" item xs={12} sm={4}>
               <Typography paddingBottom={"0.5%"} variant="h5" color="#2a4e72">
                 Work Experience
               </Typography>
@@ -136,7 +170,7 @@ export default function ProfileCard() {
                 Formation of policies and structure of the company
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid id="expanded-grid-work-education" item xs={12} sm={4}>
               <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
                 Educational History
               </Typography>
@@ -160,7 +194,7 @@ export default function ProfileCard() {
                 Certified ESG Consultant
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid id="expanded-grid-work-hobbies" item xs={12} sm={4}>
               <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
                 Hobbies and Interests
               </Typography>

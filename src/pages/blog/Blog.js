@@ -17,9 +17,9 @@ import post2 from "./blog-post2.md";
 import post3 from "./blog-post3.md";
 
 const mainFeaturedPost = {
-  title: "Title of a longer featured blog post",
+  title: "Blog 1",
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   image: "https://source.unsplash.com/random?wallpapers",
   imageText: "main image description",
   linkText: "Continue reading…",
@@ -27,18 +27,18 @@ const mainFeaturedPost = {
 
 const featuredPosts = [
   {
-    title: "Featured post",
+    title: "Blog 2",
     date: "Nov 12",
     description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
+      " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image: "https://source.unsplash.com/random?wallpapers",
     imageLabel: "Image Text",
   },
   {
-    title: "Post title",
+    title: "Blog 3",
     date: "Nov 11",
     description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "https://source.unsplash.com/random?wallpapers",
     imageLabel: "Image Text",
   },
