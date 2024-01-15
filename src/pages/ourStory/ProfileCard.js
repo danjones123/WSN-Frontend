@@ -15,7 +15,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Grid from "@mui/material/Grid";
-import AshaMaria from "../../assets/Asha headshot.jpg";
+
+// import AmalContent from "../../inputs/Amal.json";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -37,7 +38,15 @@ const styles = {
   },
 };
 
-export default function ProfileCard() {
+export default function ProfileCard(props) {
+  const { persona } = props.persona;
+  const { image } = props.persona.image;
+
+  console.log(props);
+  console.log(persona);
+  // console.log(image);
+  console.log(persona.workExperience);
+  console.log(persona.workExperience[0][2]);
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -70,16 +79,16 @@ export default function ProfileCard() {
               objectFit: "cover",
               objectPosition: "top",
             }}
-            image={AshaMaria}
-            alt="AshaMaria"
+            image={image}
+            alt="Profile Picture"
           />
         </Grid>
         <Grid item xs={12} sm={9} id="top-body-grid">
           <CardContent id="top-body-card">
             <CardHeader
               id="top-body-card-header"
-              title="Asha Maria Nathan"
-              subheader="ESG/CSR Director"
+              title={persona.name}
+              subheader={persona.role}
               sx={{ color: "#2a4e72" }}
             />
             <Typography
@@ -87,9 +96,7 @@ export default function ProfileCard() {
               color="text.secondary"
               id="top-body-main-text"
             >
-              My current position as Director CSR for the last 8 years has
-              shaped me into the person most aligned with my value system. The
-              need for initiatives of Social impact is at an all time high.
+              {persona.descriptionHeader}
             </Typography>
           </CardContent>
         </Grid>
@@ -136,69 +143,49 @@ export default function ProfileCard() {
               <Typography paddingBottom={"0.5%"} variant="h5" color="#2a4e72">
                 Work Experience
               </Typography>
-              <Typography variant="h6" color="#5d95ac">
-                Nathan and Nathan - Human Resources{" "}
-                <Typography
-                  variant="inherit"
-                  // component="span"
-                  style={{ fontSize: "0.9rem" }}
-                >
-                  Present
+              {persona.workExperience.map((key, index) => (
+                <Typography variant="h6" color="#5d95ac" key={index}>
+                  {key[0]}
+                  <Typography style={{ fontSize: "0.9rem" }}>
+                    {key[1]}
+                  </Typography>
+                  {key[2].details.map((key, index) => (
+                    <Typography
+                      // variant="body2"
+                      color="#000000"
+                      style={{ fontSize: "0.9rem" }}
+                      fontWeight="200"
+                      key={index}
+                    >
+                      {index > 0 && <br />}
+                      {key}
+                    </Typography>
+                  ))}
                 </Typography>
-              </Typography>
-              <Typography variant="body">
-                Coordination, planning, and implementation of CSR activities
-                across multiple organizations
-                <br />
-                Create policies and functional application documents.
-              </Typography>
-              <Typography variant="h6" color="#5d95ac" paddingTop={"0.5%"}>
-                Operations Director - Dynamic Services{" "}
-                <Typography
-                  variant="inherit"
-                  component="span"
-                  style={{ fontSize: "0.9rem" }}
-                >
-                  September 2019 - Present
-                </Typography>
-              </Typography>
-              <Typography variant="body">
-                Managing complex projects from start to finish
-                <br />
-                Built capability within Teams
-                <br />
-                Formation of policies and structure of the company
-              </Typography>
+              ))}
             </Grid>
             <Grid id="expanded-grid-work-education" item xs={12} sm={4}>
               <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
                 Educational History
               </Typography>
-              <Typography variant="h6" color="#5d95ac">
-                Graduate in Economics{" "}
-                <Typography
-                  variant="inherit"
-                  component="span"
-                  style={{ fontSize: "0.9rem" }}
-                >
-                  1986
+              {persona.educationHistory.map((key, index) => (
+                <Typography variant="body" key={index}>
+                  {index > 0 && <br />}
+                  {key}
                 </Typography>
-              </Typography>
-              <Typography variant="body">
-                Certified CSR Practioner CSE
-                <br />
-                Certifed Psychometric Test Administrator SHL
-                <br />
-                Certifed Student Counsellor ISN
-                <br />
-                Certified ESG Consultant
-              </Typography>
+              ))}
             </Grid>
             <Grid id="expanded-grid-work-hobbies" item xs={12} sm={4}>
               <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
                 Hobbies and Interests
               </Typography>
-              <Typography variant="body">
+              {persona.hobbies.map((key, index) => (
+                <Typography variant="body" key={index}>
+                  {index > 0 && <br />}
+                  {key}
+                </Typography>
+              ))}
+              {/* <Typography variant="body">
                 Boating
                 <br />
                 Driving
@@ -206,7 +193,7 @@ export default function ProfileCard() {
                 Gardening
                 <br />
                 Creativity
-              </Typography>
+              </Typography> */}
             </Grid>
           </Grid>
         </CardContent>
