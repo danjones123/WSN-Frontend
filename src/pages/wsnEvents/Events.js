@@ -10,7 +10,6 @@ export default function Events() {
       <Header title="Events"></Header>
       <center>
         <h1>What we have going on...</h1>
-        <Button onClick={() => nav("/blog")}>Blog</Button>
       </center>
     </div>
   );

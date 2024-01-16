@@ -24,9 +24,9 @@ export default function Story() {
       <Header title="Our Story"></Header>
       <center>
         <h1>About Us</h1>
-        <AshaCard></AshaCard>
+        {/* <AshaCard></AshaCard> */}
         <ProfileCard persona={AshaProps}></ProfileCard>
-        {/* <ProfileCard persona={SonaProps}></ProfileCard> */}
+        <ProfileCard persona={SonaProps}></ProfileCard>
         <ProfileCard persona={AmalProps}></ProfileCard>
       </center>
     </div>

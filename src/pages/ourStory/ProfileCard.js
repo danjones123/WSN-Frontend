@@ -42,11 +42,11 @@ export default function ProfileCard(props) {
   const { persona } = props.persona;
   const { image } = props.persona.image;
 
-  console.log(props);
-  console.log(persona);
-  // console.log(image);
-  console.log(persona.workExperience);
-  console.log(persona.workExperience[0][2]);
+  // console.log(props);
+  // console.log(persona);
+  // // console.log(image);
+  // console.log(persona.workExperience);
+  // console.log(persona.workExperience[0][2]);
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {

@@ -1,5 +1,38 @@
 {
   "name": "Sona",
-  "role": "Something else",
-  "descriptionHeader": "I do the other things"
+  "role": "",
+  "descriptionHeader": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "workExperience": [
+    [
+      "Faucibus ornare suspendisse sed ",
+      "nisi lacus sed viverra",
+      {
+        "details": ["tellus. Ullamcorper", "dignissim cras."]
+      }
+    ],
+    [
+      "tincidunt lobortis",
+      "Placerat in egestas",
+      {
+        "details": [
+          "erat imperdiet sed euismod nisi",
+          "Est pellentesque elit",
+          "ullamcorper dignissim cras"
+        ]
+      }
+    ]
+  ],
+  "educationHistory": [
+    "Nec dui nunc mattis enim",
+    "Semper feugiat nibh sed",
+    "pulvinar. Sed odio",
+    "morbi quis commodo",
+    "dui faucibus in ornare."
+  ],
+  "hobbies": [
+    "Lacus laoreet non curabitur",
+    "gravida arcu ac",
+    "tortor dignissim. Tortor",
+    "vitae purus faucibus ornare"
+  ]
 }

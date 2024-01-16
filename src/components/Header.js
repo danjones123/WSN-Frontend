@@ -42,7 +42,7 @@ const Header = (props) => {
       <ListItem onClick={() => nav("/resources")}>
         <Typography variant="body1">Resources</Typography>
       </ListItem>
-      <ListItem onClick={() => nav("/")}>
+      <ListItem onClick={() => nav("/contact")}>
         <Typography variant="body1">Contact Us</Typography>
       </ListItem>
     </List>
@@ -115,7 +115,7 @@ const Header = (props) => {
               <Button onClick={() => nav("/resources")} size="small">
                 Resources
               </Button>
-              <Button onClick={() => nav("/")} size="small">
+              <Button onClick={() => nav("/contact")} size="small">
                 Contact Us
               </Button>
             </Hidden>
