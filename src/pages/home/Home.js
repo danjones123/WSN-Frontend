@@ -36,6 +36,7 @@ export default function Home() {
           style={{
             width: "auto",
             maxHeight: "400px",
+            maxWidth: "90%",
             objectFit: "cover",
             objectPosition: "top",
           }}
