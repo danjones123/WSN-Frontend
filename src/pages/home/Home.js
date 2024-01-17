@@ -17,7 +17,7 @@ export default function Home() {
           // fontSize="18px"
           // style={{
           //   fontSize: "18px",
-
+          color="#1976d2"
           marginBottom="20px"
         >
           Welcome to Women's Sustainability Network
