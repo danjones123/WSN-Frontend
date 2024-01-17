@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Header title="Home"></Header>
       <center>
-        <h1>Weclome to WSN</h1>
+        <h1>Welcome to WSN</h1>
         <Typography
           maxWidth="lg"
           variant="body2"
