@@ -14,14 +14,14 @@ function Footer() {
         <Typography variant="h6" align="center" gutterBottom>
           {title}
         </Typography>
-        <Typography
+        {/* <Typography
           variant="subtitle1"
           align="center"
           color="text.secondary"
           component="p"
         >
           {description}
-        </Typography>
+        </Typography> */}
       </Container>
     </Box>
   );

@@ -26,8 +26,8 @@ export default function Story() {
         <h1>About Us</h1>
         {/* <AshaCard></AshaCard> */}
         <ProfileCard persona={AshaProps}></ProfileCard>
-        <ProfileCard persona={SonaProps}></ProfileCard>
-        <ProfileCard persona={AmalProps}></ProfileCard>
+        {/* <ProfileCard persona={SonaProps}></ProfileCard>
+        <ProfileCard persona={AmalProps}></ProfileCard> */}
       </center>
     </div>
   );

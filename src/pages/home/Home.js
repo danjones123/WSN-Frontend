@@ -40,27 +40,6 @@ export default function Home() {
           <br />
           The company is formed by women for women
         </Typography>
-
-        <Typography variant="h5">What we do:</Typography>
-        <br />
-        <Typography
-          maxWidth="lg"
-          variant="body"
-          // fontSize="18px"
-          // style={{
-          //   fontSize: "18px",
-
-          marginBottom="20px"
-          // }}
-        >
-          Training Events
-          <br />
-          Conferences
-          <br />
-          Workshops
-          <br />
-          Chats
-        </Typography>
         <CardMedia
           id="image-card"
           component="img"

@@ -30,17 +30,23 @@ const Header = (props) => {
       <ListItem onClick={() => nav("/")}>
         <Typography variant="body1">Home</Typography>
       </ListItem>
-      <ListItem onClick={() => nav("/story")}>
-        <Typography variant="body1">Our Story</Typography>
+      <ListItem onClick={() => nav("/training")}>
+        <Typography variant="body1">Training</Typography>
       </ListItem>
       <ListItem onClick={() => nav("/events")}>
         <Typography variant="body1">Events</Typography>
       </ListItem>
-      <ListItem onClick={() => nav("/blog")}>
-        <Typography variant="body1">Blogs</Typography>
+      <ListItem onClick={() => nav("/conferences")}>
+        <Typography variant="body1">Conferences</Typography>
       </ListItem>
-      <ListItem onClick={() => nav("/resources")}>
-        <Typography variant="body1">Resources</Typography>
+      <ListItem onClick={() => nav("/workshops")}>
+        <Typography variant="body1">Workshops</Typography>
+      </ListItem>
+      <ListItem onClick={() => nav("/chats")}>
+        <Typography variant="body1">Chats</Typography>
+      </ListItem>
+      <ListItem onClick={() => nav("/story")}>
+        <Typography variant="body1">Our Story</Typography>
       </ListItem>
       <ListItem onClick={() => nav("/contact")}>
         <Typography variant="body1">Contact Us</Typography>
@@ -60,6 +66,7 @@ const Header = (props) => {
         }}
         alt="WSN Logo"
         src={Logo}
+        onClick={() => nav("/")}
       />
       <Container maxWidth="lg">
         <React.Fragment>
@@ -67,7 +74,7 @@ const Header = (props) => {
             position="fixed"
             sx={{ borderBottom: 1, borderColor: "divider" }}
           >
-            <Hidden smUp>
+            <Hidden mdUp>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
@@ -89,15 +96,18 @@ const Header = (props) => {
               </Typography>
             </Hidden>
 
-            <Hidden smDown>
+            <Hidden mdDown>
               <Button onClick={() => nav("/")} size="small">
                 Home
               </Button>
-              <Button onClick={() => nav("/story")} size="small">
-                Our Story
+              <Button onClick={() => nav("/training")} size="small">
+                Training
               </Button>
               <Button onClick={() => nav("/events")} size="small">
                 Events
+              </Button>
+              <Button onClick={() => nav("/conferences")} size="small">
+                Conferences
               </Button>
               <Typography
                 component="h2"
@@ -109,25 +119,29 @@ const Header = (props) => {
               >
                 {title}
               </Typography>
-              <Button onClick={() => nav("/blog")} size="small">
-                Blog
+
+              <Button onClick={() => nav("/workshops")} size="small">
+                Workshops
               </Button>
-              <Button onClick={() => nav("/resources")} size="small">
-                Resources
+              <Button onClick={() => nav("/chats")} size="small">
+                Chats
+              </Button>
+              <Button onClick={() => nav("/story")} size="small">
+                Our Story
               </Button>
               <Button onClick={() => nav("/contact")} size="small">
                 Contact Us
               </Button>
             </Hidden>
           </Toolbar>
-          <Hidden smDown>
+          <Hidden mdDown>
             <Toolbar
               component="nav"
               variant="dense"
               sx={{ justifyContent: "space-between", overflowX: "auto" }}
             ></Toolbar>
           </Hidden>
-          <Hidden smUp>
+          <Hidden mdUp>
             <Drawer
               variant="temporary"
               anchor="left"
