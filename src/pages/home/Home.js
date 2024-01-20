@@ -17,7 +17,7 @@ export default function Home() {
           // fontSize="18px"
           // style={{
           //   fontSize: "18px",
-          color="#1976d2"
+          color="secondary"
           marginBottom="20px"
         >
           Welcome to Women's Sustainability Network
@@ -34,11 +34,10 @@ export default function Home() {
 
           // }}
         >
-          WSN was created on the year of sustainability 2023, it was formed in
-          UAE in 2023.
+          WSN was created in UAE in the year of sustainability 2023
           <br />
           <br />
-          The company is formed by women for women
+          We are an organization founded by women for women
         </Typography>
         <CardMedia
           id="image-card"
