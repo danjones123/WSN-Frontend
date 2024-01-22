@@ -88,7 +88,7 @@ export default function ProfileCard(props) {
             <CardHeader
               id="top-body-card-header"
               title={persona.name}
-              subheader={persona.role}
+              // subheader={persona.role}
               sx={{ color: "#2a4e72" }}
             />
             <Typography
@@ -138,62 +138,67 @@ export default function ProfileCard(props) {
           id="expanded-card-content"
           style={{ width: "90%", textAlign: "center" }}
         >
-          <Grid id="expanded-grid-container" container justifyContent="center">
-            <Grid id="expanded-grid-work-experience" item xs={12} sm={4}>
-              <Typography paddingBottom={"0.5%"} variant="h5" color="#2a4e72">
-                Work Experience
-              </Typography>
-              {persona.workExperience.map((key, index) => (
-                <Typography variant="h6" color="#5d95ac" key={index}>
-                  {key[0]}
-                  <Typography style={{ fontSize: "0.9rem" }}>
-                    {key[1]}
+          <Grid
+            id="expanded-grid-container-profile"
+            container
+            justifyContent="center"
+          >
+            {/* <Grid id="expanded-grid-work-experience" item xs={12} sm={12}> */}
+            {persona.profileFullText.map((key, index) => (
+              <Grid id="expanded-grid-profile" item xs={12} sm={4}>
+                <Typography
+                  variant="h6"
+                  color="#5d95ac"
+                  key={index}
+                  style={{ display: "inline-block", marginRight: "10px" }}
+                >
+                  <Typography
+                    color="#000000"
+                    fontWeight="200"
+                    key={index}
+                    style={{
+                      fontSize: "0.9rem",
+                      display: "inline-block",
+                      marginRight: "5px",
+                      marginLeft: "5px",
+                    }}
+                  >
+                    {/* {index > 0 && <br />} */}
+                    {key}
                   </Typography>
-                  {key[2].details.map((key, index) => (
-                    <Typography
-                      // variant="body2"
-                      color="#000000"
-                      style={{ fontSize: "0.9rem" }}
-                      fontWeight="200"
-                      key={index}
-                    >
-                      {index > 0 && <br />}
-                      {key}
-                    </Typography>
-                  ))}
                 </Typography>
-              ))}
-            </Grid>
-            <Grid id="expanded-grid-work-education" item xs={12} sm={4}>
+              </Grid>
+            ))}
+            {/* </Grid> */}
+          </Grid>
+          <Grid
+            id="expanded-grid-container-secondary"
+            container
+            justifyContent="center"
+          >
+            <Grid id="expanded-grid-skills" item xs={12} sm={8}>
               <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
-                Educational History
+                Skills
               </Typography>
-              {persona.educationHistory.map((key, index) => (
+              {persona.skills.map((key, index) => (
                 <Typography variant="body" key={index}>
                   {index > 0 && <br />}
                   {key}
                 </Typography>
               ))}
             </Grid>
-            <Grid id="expanded-grid-work-hobbies" item xs={12} sm={4}>
-              <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
-                Hobbies and Interests
+
+            <Grid id="expanded-grid-work-contact" item xs={12} sm={4}>
+              <Typography variant="h6" color="#2a4e72" paddingTop={"1%"}>
+                Contact Info
               </Typography>
-              {persona.hobbies.map((key, index) => (
-                <Typography variant="body" key={index}>
-                  {index > 0 && <br />}
-                  {key}
-                </Typography>
-              ))}
-              {/* <Typography variant="body">
-                Boating
-                <br />
-                Driving
-                <br />
-                Gardening
-                <br />
-                Creativity
-              </Typography> */}
+              <Typography variant="body">
+                Email: {persona.contactInfo.email}
+              </Typography>
+              <br />
+              <Typography variant="body">
+                LinkedIn: {persona.contactInfo.linkedIn}
+              </Typography>
             </Grid>
           </Grid>
         </CardContent>

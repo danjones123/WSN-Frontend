@@ -1,38 +1,19 @@
 {
   "name": "Amal Tuffin",
-  "role": "CFO",
-  "descriptionHeader": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  "workExperience": [
-    [
-      "Faucibus ornare suspendisse sed ",
-      "nisi lacus sed viverra",
-      {
-        "details": ["tellus. Ullamcorper", "dignissim cras."]
-      }
-    ],
-    [
-      "tincidunt lobortis",
-      "Placerat in egestas",
-      {
-        "details": [
-          "erat imperdiet sed euismod nisi",
-          "Est pellentesque elit",
-          "ullamcorper dignissim cras"
-        ]
-      }
-    ]
+  "descriptionHeader": "Through three decades Amal has worked in various roles in the Oil and Gas Sector along with FMCG and Manufacturing. Her roles were within some of the world’s largest and most profitable multinational companies.",
+  "profileFullText": [
+    "Her experience with Compliance and Corporate Governance , Business Ethics & Conduct, Finance and Marketing all rolled in have made her a popular source of advice ,especially to women colleagues in the corporate environment.",
+    "As a speaker of Arabic, French and English, Amal has a natural gift for Networking and Linking with people. Amal has a strong presence on Social  Media and connects with friends around the world along with work colleagues both past and present.",
+    "Amal has also had years of involvement in counseling and advising women in challenging home life situations. Amal is excited about her new role as CFO in Women’s Sustainability Network. She strongly believes that “Women are the Future”."
   ],
-  "educationHistory": [
-    "Nec dui nunc mattis enim",
-    "Semper feugiat nibh sed",
-    "pulvinar. Sed odio",
-    "morbi quis commodo",
-    "dui faucibus in ornare."
+  "skills": [
+    "Bachelors in Finance and Business Administration",
+    "Counselling",
+    "Compliance and Governance Advisor",
+    "CFO Women’s Sustainability Network"
   ],
-  "hobbies": [
-    "Lacus laoreet non curabitur",
-    "gravida arcu ac",
-    "tortor dignissim. Tortor",
-    "vitae purus faucibus ornare"
-  ]
+  "contactInfo": {
+    "email": "amal@wsn.ae",
+    "linkedIn": "@Amal Tuffin"
+  }
 }

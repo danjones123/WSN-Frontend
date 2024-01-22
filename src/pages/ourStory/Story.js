@@ -4,8 +4,9 @@ import Header from "../../components/Header";
 import AshaCard from "./ProfileCardAsha";
 import ProfileCard from "./ProfileCard";
 import AmalContent from "../../inputs/Amal.json";
-import AshaContent from "../../inputs/Asha.json";
+import AshaContent from "../../inputs/AshaProfileNew.json";
 import SonaContent from "../../inputs/Sona.json";
+
 import AshaPhoto from "../../assets/Asha headshot.jpg";
 import SonaPhoto from "../../assets/Sona headshot.jpg";
 import AmalPhoto from "../../assets/Amal headshot.jpg";
@@ -26,8 +27,8 @@ export default function Story() {
         <h1>About Us</h1>
         {/* <AshaCard></AshaCard> */}
         <ProfileCard persona={AshaProps}></ProfileCard>
-        {/* <ProfileCard persona={SonaProps}></ProfileCard>
-        <ProfileCard persona={AmalProps}></ProfileCard> */}
+        {/* <ProfileCard persona={SonaProps}></ProfileCard> */}
+        <ProfileCard persona={AmalProps}></ProfileCard>
       </center>
     </div>
   );

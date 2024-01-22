@@ -20,10 +20,16 @@ import { deepOrange } from "@mui/material/colors";
 function App() {
   const theme = createTheme({
     palette: {
-      primary: { main: "#21658a" },
-      secondary: { main: "#278fb3" },
+      primary: { main: "#70ad47" },
+      secondary: { main: "#c6e0b4" },
     },
+    // typography: {
+    //   body1: { fontSize: "16px", fontWeight: "" },
+    // },
   });
+
+  //Heading - Noto Serif KR
+  // Body - Roboto
 
   return (
     <ThemeProvider theme={theme}>
