@@ -89,7 +89,7 @@ export default function ProfileCard(props) {
               id="top-body-card-header"
               title={persona.name}
               // subheader={persona.role}
-              sx={{ color: "#2a4e72" }}
+              sx={{ color: "#70ad47" }}
             />
             <Typography
               variant="body2"
@@ -177,7 +177,7 @@ export default function ProfileCard(props) {
             justifyContent="center"
           >
             <Grid id="expanded-grid-skills" item xs={12} sm={8}>
-              <Typography variant="h5" color="#2a4e72" paddingTop={"1%"}>
+              <Typography variant="h5" color="#c6e0b4" paddingTop={"1%"}>
                 Skills
               </Typography>
               {persona.skills.map((key, index) => (
@@ -189,7 +189,7 @@ export default function ProfileCard(props) {
             </Grid>
 
             <Grid id="expanded-grid-work-contact" item xs={12} sm={4}>
-              <Typography variant="h6" color="#2a4e72" paddingTop={"1%"}>
+              <Typography variant="h6" color="#c6e0b4" paddingTop={"1%"}>
                 Contact Info
               </Typography>
               <Typography variant="body">
