@@ -15,6 +15,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Grid from "@mui/material/Grid";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 // import AmalContent from "../../inputs/Amal.json";
 
@@ -65,7 +66,7 @@ export default function ProfileCard(props) {
         maxWidth: 1500,
         // maxHeight: expanded ? "none" : "150px",
         paddingBottom: "0px",
-        backgroundColor: "#f0f0f0",
+        backgroundColor: "#fcfcfc",
       }}
     >
       <Grid container id="main-content-container" style={{ marginTop: "10px" }}>
@@ -95,6 +96,7 @@ export default function ProfileCard(props) {
               variant="body2"
               color="text.secondary"
               id="top-body-main-text"
+              style={{ fontSize: "16px" }}
             >
               {persona.descriptionHeader}
             </Typography>
@@ -146,6 +148,7 @@ export default function ProfileCard(props) {
             {/* <Grid id="expanded-grid-work-experience" item xs={12} sm={12}> */}
             {persona.profileFullText.map((key, index) => (
               <Grid id="expanded-grid-profile" item xs={12} sm={4}>
+                {console.log(index)}
                 <Typography
                   variant="h6"
                   color="#5d95ac"
@@ -153,11 +156,11 @@ export default function ProfileCard(props) {
                   style={{ display: "inline-block", marginRight: "10px" }}
                 >
                   <Typography
-                    color="#000000"
                     fontWeight="200"
                     key={index}
                     style={{
-                      fontSize: "0.9rem",
+                      color: index % 2 === 0 ? "#3b3026" : "#2c3a2c",
+                      fontSize: "1.2rem",
                       display: "inline-block",
                       marginRight: "5px",
                       marginLeft: "5px",
@@ -165,6 +168,7 @@ export default function ProfileCard(props) {
                   >
                     {/* {index > 0 && <br />} */}
                     {key}
+                    <br />
                   </Typography>
                 </Typography>
               </Grid>
@@ -177,11 +181,15 @@ export default function ProfileCard(props) {
             justifyContent="center"
           >
             <Grid id="expanded-grid-skills" item xs={12} sm={8}>
-              <Typography variant="h5" color="#c6e0b4" paddingTop={"1%"}>
+              <Typography variant="h5" color="#2aa45e" paddingTop={"1%"}>
                 Skills
               </Typography>
               {persona.skills.map((key, index) => (
-                <Typography variant="body" key={index}>
+                <Typography
+                  variant="body"
+                  key={index}
+                  style={{ fontSize: "1.2rem" }}
+                >
                   {index > 0 && <br />}
                   {key}
                 </Typography>
@@ -189,15 +197,29 @@ export default function ProfileCard(props) {
             </Grid>
 
             <Grid id="expanded-grid-work-contact" item xs={12} sm={4}>
-              <Typography variant="h6" color="#c6e0b4" paddingTop={"1%"}>
+              <Typography variant="h6" color="#2aa45e" paddingTop={"1%"}>
                 Contact Info
               </Typography>
-              <Typography variant="body">
-                Email: {persona.contactInfo.email}
+              <Typography variant="body" style={{ fontSize: "1.2rem" }}>
+                {/* Email:{" "} */}
+                <a href={`mailto:${persona.contactInfo.email}`}>
+                  {persona.contactInfo.email}
+                </a>
               </Typography>
               <br />
+              <br />
               <Typography variant="body">
-                LinkedIn: {persona.contactInfo.linkedIn}
+                {/* LinkedIn:{" "} */}
+                {/* <a href={`mailto:${persona.contactInfo.linkedIn}`}>
+                  {persona.contactInfo.linkedIn}
+                </a> */}
+                <a
+                  href={`${persona.contactInfo.linkedIn}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedInIcon></LinkedInIcon>
+                </a>
               </Typography>
             </Grid>
           </Grid>

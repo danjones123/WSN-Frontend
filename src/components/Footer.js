@@ -4,24 +4,26 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Footer() {
   const title = "Women's Sustainability Network";
-  const description = "this is the test footer for the website";
+  const description = "Follow us on Instagram to get the latest updates!";
   return (
     <Box component="footer" sx={{ bgcolor: "background.paper", py: 6 }}>
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
           {title}
         </Typography>
-        {/* <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          {description}
-        </Typography> */}
+        <Box align="center">
+          <a
+            href="https://www.instagram.com/womens_sustainability_network/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramIcon></InstagramIcon>
+          </a>
+        </Box>
       </Container>
     </Box>
   );

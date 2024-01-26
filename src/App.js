@@ -16,16 +16,19 @@ import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
+import testPage from "./pages/testing/testpage.js";
 
 function App() {
   const theme = createTheme({
     palette: {
       primary: { main: "#70ad47" },
-      secondary: { main: "#c6e0b4" },
+      secondary: { main: "#2aa45e" },
     },
-    // typography: {
-    //   body1: { fontSize: "16px", fontWeight: "" },
-    // },
+    typography: {
+      // h6: { fontSize: "100px" },
+      // body1: { fontSize: "100px", fontWeight: 300 },
+      newStyle: { fontSize: "18px", fontWeight: 450, lineHeight: "33px" },
+    },
   });
 
   //Heading - Noto Serif KR
@@ -38,14 +41,15 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/story" element={<Story />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/events" element={<Events />} />
+            {/* <Route path="/resources" element={<Resources />} />
+            <Route path="/events" element={<Events />} /> */}
             {/* <Route path="/blog" element={<Blog />} /> */}
-            <Route path="/chats" element={<Chats />} />
+            {/* <Route path="/chats" element={<Chats />} />
             <Route path="/conferences" element={<Conferences />} />
             <Route path="/workshops" element={<Workshops />} />
-            <Route path="/training" element={<Training />} />
+            <Route path="/training" element={<Training />} /> */}
             <Route path="/contact" element={<ContactUs />} />
+            {/* <Route path="/testing" element={<testPage />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

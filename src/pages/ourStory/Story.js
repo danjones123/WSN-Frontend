@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/Header";
+import Header from "../../components/GlobalHeader";
 import AshaCard from "./ProfileCardAsha";
 import ProfileCard from "./ProfileCard";
 import AmalContent from "../../inputs/Amal.json";
