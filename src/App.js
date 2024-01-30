@@ -17,6 +17,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
 import testPage from "./pages/testing/testpage.js";
+import NotFound from "./pages/error/NotFound.js";
 
 function App() {
   const theme = createTheme({
@@ -50,6 +51,7 @@ function App() {
             <Route path="/training" element={<Training />} /> */}
             <Route path="/contact" element={<ContactUs />} />
             {/* <Route path="/testing" element={<testPage />} /> */}
+            <Route path="*" element={<NotFound />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
