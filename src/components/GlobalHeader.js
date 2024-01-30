@@ -15,6 +15,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/Logo.PNG";
+import BackgroundShapes from "../assets/Background shapes TEST.png";
 
 const Header = (props) => {
   const { title } = props;
@@ -84,11 +85,33 @@ const Header = (props) => {
 
             <Hidden smDown>
               <Box
+                position="relative"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
                 sx={{ maxWidth: "lg", width: "100%" }}
               >
+                <Box
+                  position="absolute"
+                  top={0}
+                  left={0}
+                  zIndex={-1}
+                  sx={{
+                    height: 150,
+                    width: "100%",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={BackgroundShapes}
+                    alt="Background"
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Box>
                 <Button
                   variant="contained"
                   onClick={() => nav("/")}
