@@ -15,7 +15,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/Logo.PNG";
-import BackgroundShapes from "../assets/Background shapes TEST.png";
+import BackgroundShapes from "../assets/Background shapes TEST SVG 3.svg";
 
 const Header = (props) => {
   const { title } = props;
@@ -42,124 +42,144 @@ const Header = (props) => {
   );
 
   return (
-    <div>
-      <Box
-        component="img"
-        sx={{
-          // height: 150,
-          // width: "auto",
-          maxHeight: { xs: 50, md: 100 },
-          maxWidth: { xs: "auto", md: "auto" },
-        }}
-        alt="WSN Logo"
-        src={Logo}
-        onClick={() => nav("/")}
-      />
+    <Box>
       <Container maxWidth="lg">
-        <React.Fragment>
-          <Toolbar
-            position="fixed"
-            sx={{ borderBottom: 1, borderColor: "divider" }}
-          >
-            <Hidden smUp>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2 }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography
-                component="h2"
-                variant="h5"
-                color="inherit"
-                align="center"
-                noWrap
-                sx={{ flex: 1 }}
-              >
-                {title}
-              </Typography>
-            </Hidden>
-
-            <Hidden smDown>
-              <Box
-                position="relative"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                sx={{ maxWidth: "lg", width: "100%" }}
-              >
-                <Box
-                  position="absolute"
-                  top={0}
-                  left={0}
-                  zIndex={-1}
-                  sx={{
-                    height: 150,
-                    width: "100%",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    src={BackgroundShapes}
-                    alt="Background"
-                    style={{
-                      height: "100%",
-                      width: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Box>
-                <Button
-                  variant="contained"
-                  onClick={() => nav("/")}
-                  size="small"
-                  style={{ margin: "0 8px" }}
-                >
-                  Home
-                </Button>
-                <Button
-                  onClick={() => nav("/story")}
-                  variant="contained"
-                  size="small"
-                  style={{ margin: "0 8px" }}
-                >
-                  Our Story
-                </Button>
-                <Button
-                  onClick={() => nav("/contact")}
-                  variant="contained"
-                  size="small"
-                  style={{ margin: "0 8px" }}
-                >
-                  Contact Us
-                </Button>
-                {/*Order -> Home, Training, Events, Conferences, "TITLE", Workshops, Chats, Our Story, Contact Us*/}
-              </Box>
-            </Hidden>
-          </Toolbar>
-          <Hidden smDown>
-            <Toolbar
-              component="nav"
-              variant="dense"
-              sx={{ justifyContent: "space-between", overflowX: "auto" }}
-            ></Toolbar>
-          </Hidden>
+        {/* <Box
+          component="img"
+          sx={{
+            // height: 150,
+            // width: "auto",
+            maxHeight: { xs: 50, md: 100 },
+            maxWidth: { xs: "auto", md: "auto" },
+          }}
+          alt="WSN Logo"
+          src={Logo}
+          onClick={() => nav("/")}
+        /> */}
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          // sx={{ marginTop: { xs: 0, md: 8 } }} // Adjust margin as needed
+        >
+          <Box
+            component="img"
+            src={Logo}
+            alt="WSN Logo"
+            sx={{
+              maxHeight: { xs: 75, md: 100 },
+              maxWidth: { xs: "auto", md: "auto" },
+              cursor: "pointer", // Add cursor pointer for better UX
+              marginRight: { xs: 0, md: 4 }, // Add margin for spacing
+            }}
+            onClick={() => nav("/")}
+          />
+          {/* Your buttons */}
+        </Box>
+        {/* <React.Fragment> */}
+        <Toolbar
+          position="fixed"
+          sx={{ borderBottom: 1, borderColor: "divider" }}
+        >
           <Hidden smUp>
-            <Drawer
-              variant="temporary"
-              anchor="left"
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2 }}
             >
-              {drawer}
-            </Drawer>
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              component="h2"
+              variant="h5"
+              color="inherit"
+              align="center"
+              noWrap
+              sx={{ flex: 1 }}
+            >
+              {title}
+            </Typography>
           </Hidden>
-        </React.Fragment>
+
+          <Hidden smDown>
+            <Box
+              position="relative"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              sx={{ maxWidth: "lg", width: "100%" }}
+            >
+              <Box
+                position="absolute"
+                top={-100}
+                left={0}
+                zIndex={-1}
+                sx={{
+                  height: 150,
+                  width: "100%",
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={BackgroundShapes}
+                  alt="Background"
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              </Box>
+              <Button
+                variant="contained"
+                onClick={() => nav("/")}
+                size="small"
+                style={{ margin: "0 8px" }}
+              >
+                Home
+              </Button>
+              <Button
+                onClick={() => nav("/story")}
+                variant="contained"
+                size="small"
+                style={{ margin: "0 8px" }}
+              >
+                Our Story
+              </Button>
+              <Button
+                onClick={() => nav("/contact")}
+                variant="contained"
+                size="small"
+                style={{ margin: "0 8px" }}
+              >
+                Contact Us
+              </Button>
+              {/*Order -> Home, Training, Events, Conferences, "TITLE", Workshops, Chats, Our Story, Contact Us*/}
+            </Box>
+          </Hidden>
+        </Toolbar>
+        <Hidden smDown>
+          <Toolbar
+            component="nav"
+            variant="dense"
+            sx={{ justifyContent: "space-between", overflowX: "auto" }}
+          ></Toolbar>
+        </Hidden>
+        <Hidden smUp>
+          <Drawer
+            variant="temporary"
+            anchor="left"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+          >
+            {drawer}
+          </Drawer>
+        </Hidden>
+        {/* </React.Fragment> */}
       </Container>
-    </div>
+    </Box>
   );
 };
 
