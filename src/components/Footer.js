@@ -10,8 +10,8 @@ function Footer() {
   const title = "Women's Sustainability Network";
   const description = "Follow us on Instagram to get the latest updates!";
   return (
-    <Box component="footer" sx={{ bgcolor: "background.paper", py: 6 }}>
-      <Container maxWidth="lg">
+    <Container maxWidth="lg">
+      <Box component="footer" sx={{ bgcolor: "background.paper", py: 6 }}>
         <Typography variant="h6" align="center" gutterBottom>
           {title}
         </Typography>
@@ -24,8 +24,8 @@ function Footer() {
             <InstagramIcon></InstagramIcon>
           </a>
         </Box>
-      </Container>
-    </Box>
+      </Box>{" "}
+    </Container>
   );
 }
 
