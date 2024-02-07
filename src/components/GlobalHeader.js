@@ -74,9 +74,8 @@ const Header = (props) => {
             }}
             onClick={() => nav("/")}
           />
-          {/* Your buttons */}
         </Box>
-        {/* <React.Fragment> */}
+
         <Toolbar
           position="fixed"
           sx={{ borderBottom: 1, borderColor: "divider" }}
@@ -111,7 +110,7 @@ const Header = (props) => {
               alignItems="center"
               sx={{ maxWidth: "lg", width: "100%" }}
             >
-              <Box
+              {/* <Box
                 position="absolute"
                 top={-100}
                 left={0}
@@ -131,28 +130,44 @@ const Header = (props) => {
                     objectFit: "contain",
                   }}
                 />
-              </Box>
+              </Box> */}
               <Button
-                variant="contained"
+                variant={title === "Home" ? "contained" : "outlined"}
                 onClick={() => nav("/")}
                 size="small"
-                style={{ margin: "0 8px" }}
+                sx={{
+                  typography:
+                    title === "Home" ? "buttonSelected" : "buttonSecondary",
+                  margin: "0 8px",
+                }}
               >
                 Home
               </Button>
               <Button
                 onClick={() => nav("/story")}
-                variant="contained"
+                variant={title === "Our Story" ? "contained" : "outlined"}
                 size="small"
-                style={{ margin: "0 8px" }}
+                sx={{
+                  typography:
+                    title === "Our Story"
+                      ? "buttonSelected"
+                      : "buttonSecondary",
+                  margin: "0 8px",
+                }}
               >
                 Our Story
               </Button>
               <Button
                 onClick={() => nav("/contact")}
-                variant="contained"
+                variant={title === "Contact Us" ? "contained" : "outlined"}
                 size="small"
-                style={{ margin: "0 8px" }}
+                sx={{
+                  typography:
+                    title === "Contact Us"
+                      ? "buttonSelected"
+                      : "buttonSecondary",
+                  margin: "0 8px",
+                }}
               >
                 Contact Us
               </Button>

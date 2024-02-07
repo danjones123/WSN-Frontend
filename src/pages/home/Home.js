@@ -17,21 +17,21 @@ export default function Home() {
       >
         <Box sx={{ maxWidth: "lg" }}>
           {/* <Paper> */}
-          <Typography variant="h3" color="primary" marginBottom="20px">
+          <Typography variant="h1" color="primary" marginBottom="20px">
             Women's Sustainability Network
           </Typography>
-          <Typography variant="h5" color="secondary" marginBottom="20px">
+          <Typography variant="h2" color="secondary" marginBottom="20px">
             Together we Thrive
           </Typography>
           {/* </Paper> */}
           {/* <Paper elevation={24}> */}
-          <Typography variant="h6" marginBottom="20px">
+          <Typography variant="h3" marginBottom="20px">
             WSN is a company founded in the UAE by three dynamic women in the
             year 2023.
           </Typography>
 
           <Typography
-            variant="newStyle"
+            variant="body1"
             // style={{ lineHeight: "2", fontSize: "16px", fontWeight: 300 }}
           >
             The ruler of Dubai commemorated the year 2023 as “THE YEAR OF
@@ -50,11 +50,11 @@ export default function Home() {
           <br />
           <br />
           {/* <Paper> */}
-          <Typography variant="h6" marginBottom="20px">
+          <Typography variant="h5" marginBottom="20px">
             Our Aim
           </Typography>
           <Typography
-            variant="newStyle"
+            variant="body1"
             // style={{ lineHeight: "2" }}
           >
             Our vision is to empower women to make life better in their own way.
