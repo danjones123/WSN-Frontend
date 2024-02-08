@@ -44,137 +44,127 @@ const Header = (props) => {
   return (
     <Box>
       <Container maxWidth="lg">
-        {/* <Box
-          component="img"
-          sx={{
-            // height: 150,
-            // width: "auto",
-            maxHeight: { xs: 50, md: 100 },
-            maxWidth: { xs: "auto", md: "auto" },
-          }}
-          alt="WSN Logo"
-          src={Logo}
-          onClick={() => nav("/")}
-        /> */}
         <Box
           display="flex"
-          justifyContent="space-between"
+          // justifyContent="space-between"
           alignItems="center"
-          // sx={{ marginTop: { xs: 0, md: 8 } }} // Adjust margin as needed
+          sx={{
+            borderBottom: 1, // Add border to match Toolbar's border
+            borderColor: "divider", // Add border color to match Toolbar's border color
+            paddingX: 2, // Add horizontal padding for spacing
+            // position: "fixed", // Fix the position to stay at the top
+            width: "100%", // Occupy full width
+            zIndex: 10, // Ensure it appears above other elements
+            top: 0,
+          }}
         >
           <Box
-            component="img"
-            src={Logo}
-            alt="WSN Logo"
-            sx={{
-              maxHeight: { xs: 75, md: 100 },
-              maxWidth: { xs: "auto", md: "auto" },
-              cursor: "pointer", // Add cursor pointer for better UX
-              marginRight: { xs: 0, md: 4 }, // Add margin for spacing
-            }}
-            onClick={() => nav("/")}
-          />
-        </Box>
-
-        <Toolbar
-          position="fixed"
-          sx={{ borderBottom: 1, borderColor: "divider" }}
-        >
-          <Hidden smUp>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h2"
-              variant="h5"
-              color="inherit"
-              align="center"
-              noWrap
-              sx={{ flex: 1 }}
-            >
-              {title}
-            </Typography>
-          </Hidden>
-
-          <Hidden smDown>
+            display="flex"
+            // justifyContent="space-between"
+            alignItems="center"
+            // sx={{ marginTop: { xs: 0, md: 8 } }} // Adjust margin as needed
+          >
             <Box
-              position="relative"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              sx={{ maxWidth: "lg", width: "100%" }}
-            >
-              {/* <Box
-                position="absolute"
-                top={-100}
-                left={0}
-                zIndex={-1}
+              component="img"
+              src={Logo}
+              alt="WSN Logo"
+              sx={{
+                maxHeight: { xs: 125, md: 125 },
+                maxWidth: { xs: "auto", md: "auto" },
+                cursor: "pointer", // Add cursor pointer for better UX
+                marginRight: { xs: 0, md: 4 }, // Add margin for spacing
+              }}
+              onClick={() => nav("/")}
+            />
+          </Box>
+
+          <Toolbar
+            position="fixed"
+            // sx={{ borderBottom: 1, borderColor: "divider" }}
+          >
+            <Hidden smUp>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="end"
+                onClick={handleDrawerToggle}
                 sx={{
-                  height: 150,
-                  width: "100%",
-                  overflow: "hidden",
+                  position: "fixed", // Fixed positioning
+                  top: 0, // Position at the top of the viewport
+                  right: 0, // Position at the right of the viewport
+                  zIndex: 1000, // Ensure it appears above other elements
+                  marginRight: 4, // Adjust margin for spacing
+                  marginTop: 6, // Adjust margin for spacing
+                  width: 40,
                 }}
               >
-                <img
-                  src={BackgroundShapes}
-                  alt="Background"
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "contain",
+                <MenuIcon />
+              </IconButton>
+              {/* <Typography
+                component="h2"
+                variant="h5"
+                color="inherit"
+                align="center"
+                noWrap
+                sx={{ flex: 1 }}
+              >
+                {title}
+              </Typography> */}
+            </Hidden>
+
+            <Hidden smDown>
+              <Box
+                position="relative"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                sx={{ maxWidth: "lg", width: "100%" }}
+              >
+                <Button
+                  variant={title === "Home" ? "contained" : "outlined"}
+                  onClick={() => nav("/")}
+                  size="small"
+                  sx={{
+                    typography:
+                      title === "Home" ? "buttonSelected" : "buttonSecondary",
+                    margin: { lg: "0 50px", md: "0 25px", xs: "0 10px" },
                   }}
-                />
-              </Box> */}
-              <Button
-                variant={title === "Home" ? "contained" : "outlined"}
-                onClick={() => nav("/")}
-                size="small"
-                sx={{
-                  typography:
-                    title === "Home" ? "buttonSelected" : "buttonSecondary",
-                  margin: "0 8px",
-                }}
-              >
-                Home
-              </Button>
-              <Button
-                onClick={() => nav("/story")}
-                variant={title === "Our Story" ? "contained" : "outlined"}
-                size="small"
-                sx={{
-                  typography:
-                    title === "Our Story"
-                      ? "buttonSelected"
-                      : "buttonSecondary",
-                  margin: "0 8px",
-                }}
-              >
-                Our Story
-              </Button>
-              <Button
-                onClick={() => nav("/contact")}
-                variant={title === "Contact Us" ? "contained" : "outlined"}
-                size="small"
-                sx={{
-                  typography:
-                    title === "Contact Us"
-                      ? "buttonSelected"
-                      : "buttonSecondary",
-                  margin: "0 8px",
-                }}
-              >
-                Contact Us
-              </Button>
-              {/*Order -> Home, Training, Events, Conferences, "TITLE", Workshops, Chats, Our Story, Contact Us*/}
-            </Box>
-          </Hidden>
-        </Toolbar>
+                >
+                  Home
+                </Button>
+                <Button
+                  onClick={() => nav("/story")}
+                  variant={title === "Our Story" ? "contained" : "outlined"}
+                  size="small"
+                  sx={{
+                    typography:
+                      title === "Our Story"
+                        ? "buttonSelected"
+                        : "buttonSecondary",
+                    margin: { lg: "0 50px", md: "0 25px", xs: "0 10px" },
+                  }}
+                >
+                  Our Story
+                </Button>
+                <Button
+                  onClick={() => nav("/contact")}
+                  variant={title === "Contact Us" ? "contained" : "outlined"}
+                  size="small"
+                  sx={{
+                    typography:
+                      title === "Contact Us"
+                        ? "buttonSelected"
+                        : "buttonSecondary",
+                    margin: { lg: "0 50px", md: "0 25px", xs: "0 10px" },
+                  }}
+                >
+                  Contact Us
+                </Button>
+                {/*Order -> Home, Training, Events, Conferences, "TITLE", Workshops, Chats, Our Story, Contact Us*/}
+              </Box>
+            </Hidden>
+          </Toolbar>
+        </Box>
         <Hidden smDown>
           <Toolbar
             component="nav"
