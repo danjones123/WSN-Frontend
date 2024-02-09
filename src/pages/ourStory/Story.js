@@ -10,6 +10,7 @@ import SonaContent from "../../inputs/Sona.json";
 import AshaPhoto from "../../assets/Asha headshot.jpg";
 import SonaPhoto from "../../assets/Sona headshot.jpg";
 import AmalPhoto from "../../assets/Amal headshot.jpg";
+import { Typography } from "@mui/material";
 
 export default function Story() {
   const nav = useNavigate();
@@ -24,7 +25,9 @@ export default function Story() {
     <div>
       <Header title="Our Story"></Header>
       <center>
-        <h1>About Us</h1>
+        <Typography variant="h1" color="primary">
+          About Us
+        </Typography>
         {/* <AshaCard></AshaCard> */}
         <ProfileCard persona={AshaProps}></ProfileCard>
         {/* <ProfileCard persona={SonaProps}></ProfileCard> */}

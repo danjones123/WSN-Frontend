@@ -175,7 +175,7 @@ const Header = (props) => {
         <Hidden smUp>
           <Drawer
             variant="temporary"
-            anchor="left"
+            anchor="right"
             open={mobileOpen}
             onClose={handleDrawerToggle}
           >

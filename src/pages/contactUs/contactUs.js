@@ -6,6 +6,10 @@ export default function contactUs() {
     <div>
       <Header title="Contact Us"></Header>
       <center>
+        <Typography marginBottom="10px" variant="h1" color="primary">
+          {" "}
+          Contact Us{" "}
+        </Typography>
         <Typography marginBottom="10px" variant="h5">
           The best way to get in touch is to reach out to us via Email or
           Instagram
