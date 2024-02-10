@@ -29,6 +29,7 @@ export default function Story() {
           About Us
         </Typography>
         {/* <AshaCard></AshaCard> */}
+
         <ProfileCard persona={AshaProps}></ProfileCard>
         {/* <ProfileCard persona={SonaProps}></ProfileCard> */}
         <ProfileCard persona={AmalProps}></ProfileCard>
