@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Box>
       <Header title="Home"></Header>
-      <center maxWidth="xs" style={{ marginLeft: "5%", marginRight: "5%" }}>
+      <center maxWidth="xs" style={{}}>
         <Box sx={{ maxWidth: "lg" }}>
           <Typography variant="h1" color="primary" marginBottom="20px">
             Women's Sustainability Network
@@ -21,9 +21,9 @@ export default function Home() {
           <Typography variant="h2" color="secondary" marginBottom="20px">
             Together we Thrive
           </Typography>
-          <MiddleBackgroundStrip />
-          <HomeOurAim />
         </Box>
+        <MiddleBackgroundStrip />
+        <HomeOurAim />
       </center>
     </Box>
   );
