@@ -1,6 +1,7 @@
 import { Typography, Box, CardMedia, Grid } from "@mui/material";
 import backgroundGradient from "../../assets/Background gradient strip.png";
 import GroupPhoto from "../../assets/WSN Group photo - Copy.jpg";
+import ImageCarousel from "./ImageCarousel";
 
 export default function MiddleBackgroundStrip() {
   console.log(backgroundGradient);
@@ -56,21 +57,7 @@ export default function MiddleBackgroundStrip() {
           </Grid>
 
           <Grid item xs={12} lg={4} id="home-image-grid">
-            <CardMedia
-              id="image-card"
-              component="img"
-              style={{
-                marginTop: "2%",
-                width: "auto",
-                maxHeight: "200px",
-                maxWidth: "90%",
-                objectFit: "cover",
-                objectPosition: "top",
-                opacity: "90%",
-              }}
-              image={GroupPhoto}
-              alt="GroupPhoto"
-            />
+            <ImageCarousel />
           </Grid>
         </Grid>
         {/* </Box> */}

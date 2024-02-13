@@ -1,8 +1,16 @@
 import { Typography, CardMedia, Box, Paper } from "@mui/material";
+import BackgroundShapes from "../../assets/BackgroundShapesTestSquare.jpg";
 
 export default function HomeOurAim() {
   return (
-    <Box>
+    <Box
+      sx={{
+        backgroundImage: `url(${BackgroundShapes})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        marginTop: "1%",
+      }}
+    >
       <Typography variant="h5" marginBottom="20px">
         Our Aim
       </Typography>

@@ -15,7 +15,7 @@ const theme = createTheme({
       fontWeight: "bold",
     },
     h2: { fontSize: 40, fontWeight: "medium" },
-    h3: { fontSize: 26, fontWeight: "medium" },
+    h3: { fontSize: 28, fontWeight: "medium" },
     h4: { fontSize: 30, fontWeight: "regular" },
     h5: { fontSize: 24, fontWeight: "medium" },
     body1: { fontSize: 24, fontWeight: "regular" },
