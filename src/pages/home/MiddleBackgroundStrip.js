@@ -11,7 +11,7 @@ export default function MiddleBackgroundStrip() {
       // width="100px"
       sx={{
         backgroundImage:
-          "linear-gradient(to right, rgba(112, 173, 71, 0.5), rgba(42, 164, 94, 0.5))", // Gradient with 0.5 opacity
+          "linear-gradient(to right, rgba(112, 173, 71, 0.35), rgba(42, 164, 94, 0.35))", // Gradient with 0.5 opacity
         width: "100%",
         // height: "300px",
         position: "relative", // Ensure proper stacking of elements
