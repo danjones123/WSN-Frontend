@@ -1,6 +1,9 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -16,6 +19,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Grid from "@mui/material/Grid";
+import { useMediaQuery } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 // import AmalContent from "../../inputs/Amal.json";
@@ -43,7 +47,7 @@ const styles = {
 export default function ProfileCard(props) {
   const { persona } = props.persona;
   const { image } = props.persona.image;
-
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
   // console.log(props);
   // console.log(persona);
   // // console.log(image);
@@ -95,7 +99,11 @@ export default function ProfileCard(props) {
             <CardContent id="top-body-card">
               <CardHeader
                 id="top-body-card-header"
-                title={<Typography variant="h5">{persona.name}</Typography>}
+                title={
+                  <Typography variant="h6" sx={{ fontSize: "30px" }}>
+                    {persona.name}
+                  </Typography>
+                }
                 // subheader={persona.role}
                 sx={{ color: "#2aa45e" }}
               />
@@ -154,7 +162,7 @@ export default function ProfileCard(props) {
             >
               {/* <Grid id="expanded-grid-work-experience" item xs={12} sm={12}> */}
               {persona.profileFullText.map((key, index) => (
-                <Grid id="expanded-grid-profile" item xs={12} sm={4}>
+                <Grid id="expanded-grid-profile" item xs={12} sm={12} lg={4}>
                   {console.log(index)}
                   <Typography
                     variant="body1"
@@ -165,16 +173,17 @@ export default function ProfileCard(props) {
                       // fontWeight="200"
                       key={index}
                       style={{
-                        color: index % 2 === 0 ? "#3b3026" : "#2c3a2c",
+                        // color: index % 2 === 0 ? "#3b3026" : "#2c3a2c",
                         fontSize: "1.2rem",
                         display: "inline-block",
                         marginRight: "5px",
                         marginLeft: "5px",
+                        textAlign: isSmallScreen ? "left" : "center",
                       }}
                     >
-                      {/* {index > 0 && <br />} */}
+                      {<br />}
                       {key}
-                      <br />
+                      {/* <br /> */}
                     </Typography>
                   </Typography>
                 </Grid>
@@ -187,27 +196,43 @@ export default function ProfileCard(props) {
               justifyContent="center"
             >
               <Grid id="expanded-grid-skills" item xs={12} sm={8}>
-                <Typography variant="h5" color="#2aa45e" paddingTop={"1%"}>
+                <Typography
+                  variant="h6"
+                  color="#2aa45e"
+                  paddingTop={"1%"}
+                  sx={{ fontSize: "25px", marginLeft: "2%" }}
+                >
                   Skills
                 </Typography>
-                {persona.skills.map((key, index) => (
-                  <Typography
-                    variant="body"
-                    key={index}
-                    style={{ fontSize: "1.2rem" }}
-                  >
-                    {index > 0 && <br />}
-                    {key}
-                  </Typography>
-                ))}
+                <List>
+                  {persona.skills.map((key, index) => (
+                    <ListItem>
+                      <Typography
+                        variant="body"
+                        key={index}
+                        style={{
+                          fontSize: "1.2rem",
+                          textAlign: "left",
+                          marginLeft: isSmallScreen ? "0" : "10%",
+                        }}
+                      >
+                        {/* {index > 0 && <br />} */}- {key}
+                      </Typography>
+                    </ListItem>
+                  ))}
+                </List>
               </Grid>
 
               <Grid id="expanded-grid-work-contact" item xs={12} sm={4}>
-                <Typography variant="h6" color="#2aa45e" paddingTop={"1%"}>
+                <Typography
+                  variant="h6"
+                  color="#2aa45e"
+                  paddingTop={"1%"}
+                  sx={{ fontSize: "25px" }}
+                >
                   Contact Info
                 </Typography>
                 <Typography variant="body" style={{ fontSize: "1.2rem" }}>
-                  {/* Email:{" "} */}
                   <a href={`mailto:${persona.contactInfo.email}`}>
                     {persona.contactInfo.email}
                   </a>
@@ -215,10 +240,6 @@ export default function ProfileCard(props) {
                 <br />
                 <br />
                 <Typography variant="body">
-                  {/* LinkedIn:{" "} */}
-                  {/* <a href={`mailto:${persona.contactInfo.linkedIn}`}>
-                  {persona.contactInfo.linkedIn}
-                </a> */}
                   <a
                     href={`${persona.contactInfo.linkedIn}`}
                     target="_blank"

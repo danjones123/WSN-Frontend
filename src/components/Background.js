@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import BackgroundShapes from "../assets/Logo background longer.png";
+import BackgroundShapes from "../assets/BackgroundShapesHomepage.png";
 
 export const Background = () => {
   return (
@@ -9,20 +9,12 @@ export const Background = () => {
       left={0}
       zIndex={-1}
       sx={{
-        // height: 150,
         width: "100%",
-        overflow: "hidden",
+        height: "100%",
+        backgroundImage: `url(${BackgroundShapes})`, // Use backgroundImage instead of img element
+        backgroundRepeat: "repeat", // Repeat the background image to fill the whole screen
+        backgroundSize: "cover", // Ensure background image covers the entire box
       }}
-    >
-      <img
-        src={BackgroundShapes}
-        alt="Background"
-        style={{
-          height: "100%",
-          width: "100%",
-          objectFit: "contain",
-        }}
-      />
-    </Box>
+    />
   );
 };

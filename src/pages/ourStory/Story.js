@@ -11,6 +11,7 @@ import AshaPhoto from "../../assets/Asha headshot.jpg";
 import SonaPhoto from "../../assets/Sona headshot.jpg";
 import AmalPhoto from "../../assets/Amal headshot.jpg";
 import { Typography } from "@mui/material";
+import { Background } from "../../components/Background";
 
 export default function Story() {
   const nav = useNavigate();
@@ -23,7 +24,8 @@ export default function Story() {
 
   return (
     <div>
-      <Header title="Our Story"></Header>
+      {/* <Background></Background> */}
+      <Header title="About Us"></Header>
       <center>
         <Typography variant="h1" color="primary" marginBottom={"1%"}>
           About Us

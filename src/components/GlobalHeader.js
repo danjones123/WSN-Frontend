@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../assets/Logo.PNG";
+import Logo from "../assets/LogoNoBg.png";
 import BackgroundShapes from "../assets/Background shapes TEST SVG 3.svg";
 
 const Header = (props) => {
@@ -33,7 +33,7 @@ const Header = (props) => {
       </ListItem>
 
       <ListItem style={{ color: "#70ad47" }} onClick={() => nav("/story")}>
-        <Typography variant="body1">Our Story</Typography>
+        <Typography variant="body1">About Us</Typography>
       </ListItem>
       <ListItem style={{ color: "#70ad47" }} onClick={() => nav("/contact")}>
         <Typography variant="body1">Contact Us</Typography>
@@ -134,17 +134,17 @@ const Header = (props) => {
                 </Button>
                 <Button
                   onClick={() => nav("/story")}
-                  variant={title === "Our Story" ? "contained" : "outlined"}
+                  variant={title === "About Us" ? "contained" : "outlined"}
                   size="small"
                   sx={{
                     typography:
-                      title === "Our Story"
+                      title === "About Us"
                         ? "buttonSelected"
                         : "buttonSecondary",
                     margin: { lg: "0 50px", md: "0 25px", xs: "0 10px" },
                   }}
                 >
-                  Our Story
+                  About Us
                 </Button>
                 <Button
                   onClick={() => nav("/contact")}

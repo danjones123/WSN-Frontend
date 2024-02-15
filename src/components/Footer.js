@@ -11,9 +11,19 @@ function Footer() {
   const description = "Follow us on Instagram to get the latest updates!";
   return (
     <Container maxWidth="lg">
-      <Box component="footer" sx={{ bgcolor: "background.paper", py: 6 }}>
-        <Typography variant="h6" align="center" gutterBottom>
+      <Box
+        component="footer"
+        sx={{
+          py: 3,
+          borderTop: 1,
+          borderColor: "divider",
+        }}
+      >
+        <Typography variant="h5" align="center" color="primary" gutterBottom>
           {title}
+        </Typography>
+        <Typography variant="body1" align="center" gutterBottom>
+          {description}
         </Typography>
         <Box align="center">
           <a
@@ -21,7 +31,9 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <InstagramIcon></InstagramIcon>
+            <InstagramIcon
+              style={{ color: "2aa45e", fontSize: 40 }}
+            ></InstagramIcon>
           </a>
         </Box>
       </Box>{" "}
