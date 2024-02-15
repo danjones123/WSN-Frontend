@@ -25,7 +25,7 @@ export default function Story() {
     <div>
       <Header title="Our Story"></Header>
       <center>
-        <Typography variant="h1" color="primary">
+        <Typography variant="h1" color="primary" marginBottom={"1%"}>
           About Us
         </Typography>
         {/* <AshaCard></AshaCard> */}

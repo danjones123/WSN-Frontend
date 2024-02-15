@@ -59,6 +59,7 @@ export default function ProfileCard(props) {
     <Container>
       <Card
         id="full-card"
+        elevation={3}
         sx={{
           width: "90%",
           margin: "0 auto",
@@ -94,15 +95,15 @@ export default function ProfileCard(props) {
             <CardContent id="top-body-card">
               <CardHeader
                 id="top-body-card-header"
-                title={persona.name}
+                title={<Typography variant="h5">{persona.name}</Typography>}
                 // subheader={persona.role}
-                sx={{ color: "#70ad47" }}
+                sx={{ color: "#2aa45e" }}
               />
               <Typography
-                variant="body2"
-                color="text.secondary"
+                variant="body1"
+                // color="text.secondary"
                 id="top-body-main-text"
-                style={{ fontSize: "16px" }}
+                style={{ fontSize: "18px" }}
               >
                 {persona.descriptionHeader}
               </Typography>
@@ -156,13 +157,12 @@ export default function ProfileCard(props) {
                 <Grid id="expanded-grid-profile" item xs={12} sm={4}>
                   {console.log(index)}
                   <Typography
-                    variant="h6"
-                    color="#5d95ac"
+                    variant="body1"
                     key={index}
                     style={{ display: "inline-block", marginRight: "10px" }}
                   >
                     <Typography
-                      fontWeight="200"
+                      // fontWeight="200"
                       key={index}
                       style={{
                         color: index % 2 === 0 ? "#3b3026" : "#2c3a2c",
