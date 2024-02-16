@@ -28,14 +28,23 @@ const Header = (props) => {
 
   const drawer = (
     <List>
-      <ListItem style={{ color: "#70ad47" }} onClick={() => nav("/")}>
+      <ListItem
+        style={{ color: title == "Home" ? "000000" : "#70ad47" }}
+        onClick={() => nav("/")}
+      >
         <Typography variant="body1">Home</Typography>
       </ListItem>
 
-      <ListItem style={{ color: "#70ad47" }} onClick={() => nav("/story")}>
+      <ListItem
+        style={{ color: title == "About Us" ? "000000" : "#70ad47" }}
+        onClick={() => nav("/story")}
+      >
         <Typography variant="body1">About Us</Typography>
       </ListItem>
-      <ListItem style={{ color: "#70ad47" }} onClick={() => nav("/contact")}>
+      <ListItem
+        style={{ color: title == "Contact Us" ? "000000" : "#70ad47" }}
+        onClick={() => nav("/contact")}
+      >
         <Typography variant="body1">Contact Us</Typography>
       </ListItem>
     </List>
