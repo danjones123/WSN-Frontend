@@ -112,7 +112,7 @@ export default function ProfileCard(props) {
                 variant="body1"
                 // color="text.secondary"
                 id="top-body-main-text"
-                style={{ fontSize: "18px" }}
+                style={{ fontSize: "18px", fontWeight: "500" }}
               >
                 {persona.descriptionHeader}
               </Typography>

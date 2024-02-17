@@ -19,7 +19,7 @@ export default function Home() {
             Women's Sustainability Network
           </Typography>
           <Typography variant="h2" color="secondary" marginBottom="20px">
-            Together we Thrive
+            Together We Thrive
           </Typography>
         </Box>
         <MiddleBackgroundStrip />

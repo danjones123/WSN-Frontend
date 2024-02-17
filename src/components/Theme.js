@@ -14,10 +14,10 @@ const theme = createTheme({
       fontSize: 50,
       fontWeight: "bold",
     },
-    h2: { fontSize: 40, fontWeight: "medium" },
-    h3: { fontSize: 28, fontWeight: "medium" },
+    h2: { fontSize: 40, fontWeight: "500" },
+    h3: { fontSize: 28, fontWeight: "500" },
     h4: { fontSize: 30, fontWeight: "regular" },
-    h5: { fontSize: 24, fontWeight: "medium" },
+    h5: { fontSize: 24, fontWeight: "500" },
     body1: { fontSize: 24, fontWeight: "regular" },
     buttonSelected: {
       fontSize: 18,

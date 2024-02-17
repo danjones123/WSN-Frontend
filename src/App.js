@@ -20,12 +20,14 @@ import { deepOrange } from "@mui/material/colors";
 import testPage from "./pages/testing/testpage.js";
 import NotFound from "./pages/error/NotFound.js";
 import theme from "./components/Theme.js";
+import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange.js";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <BrowserRouter>
+          <ScrollToTopOnPageChange />
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
