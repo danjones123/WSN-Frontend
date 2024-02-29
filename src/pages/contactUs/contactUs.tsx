@@ -1,4 +1,5 @@
-import { Typography, Box } from "@mui/material";
+import * as React from "react";
+import { Typography } from "@mui/material";
 import Header from "../../components/GlobalHeader";
 import ContactCard from "./ContactCard";
 

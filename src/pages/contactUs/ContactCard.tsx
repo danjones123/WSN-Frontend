@@ -1,7 +1,7 @@
-import { Typography, Box, Card, Container, useMediaQuery } from "@mui/material";
+import * as React from "react";
+import { Box, Card, Container, useMediaQuery } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
-import Header from "../../components/GlobalHeader";
 
 export default function ContactCard() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -27,14 +27,13 @@ export default function ContactCard() {
         }}
       >
         <Box
-          align="left"
+          textAlign="left"
           paddingLeft={isSmallScreen ? "0%" : isMediumScreen ? "5%" : "20%"}
         >
           <a
             style={{
               color: "2aa45e",
               fontSize: isSmallScreen ? 17 : isMediumScreen ? 30 : 40,
-              color: "#2aa45e",
               textDecoration: "none",
             }}
             href={`mailto:info@wsn.ae`}
@@ -49,7 +48,7 @@ export default function ContactCard() {
           </a>
         </Box>
         <Box
-          align="left"
+          textAlign="left"
           paddingLeft={isSmallScreen ? "0%" : isMediumScreen ? "5%" : "20%"}
         >
           <a

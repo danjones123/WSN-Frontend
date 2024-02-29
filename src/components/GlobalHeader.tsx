@@ -15,9 +15,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/LogoNoBg.png";
-import BackgroundShapes from "../assets/Background shapes TEST SVG 3.svg";
 
-const Header = (props) => {
+const Header = (props: any) => {
   const { title } = props;
   const nav = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -88,8 +87,8 @@ const Header = (props) => {
           </Box>
 
           <Toolbar
-            position="fixed"
-            // sx={{ borderBottom: 1, borderColor: "divider" }}
+          // position="fixed"
+          // sx={{ borderBottom: 1, borderColor: "divider" }}
           >
             <Hidden smUp>
               <IconButton

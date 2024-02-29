@@ -1,9 +1,7 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Footer() {
@@ -25,7 +23,7 @@ function Footer() {
         <Typography variant="body1" align="center" gutterBottom>
           {description}
         </Typography>
-        <Box align="center">
+        <Box textAlign="center">
           <a
             href="https://www.instagram.com/womens_sustainability_network/"
             target="_blank"

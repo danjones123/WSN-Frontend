@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Background } from "./Background";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
