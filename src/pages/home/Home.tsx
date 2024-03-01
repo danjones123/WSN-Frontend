@@ -1,19 +1,16 @@
-import Button from "@mui/material/Button";
-import { useNavigate } from "react-router-dom";
+import * as React from "react";
+
 import Header from "../../components/GlobalHeader";
-import GroupPhoto from "../../assets/WSN Group photo - Copy.jpg";
-import { Typography, CardMedia, Box, Paper } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 
 import MiddleBackgroundStrip from "./MiddleBackgroundStrip";
 import HomeOurAim from "./HomeOurAim";
 
 export default function Home() {
-  const nav = useNavigate();
-
   return (
     <Box>
       <Header title="Home"></Header>
-      <center maxWidth="xs" style={{}}>
+      <center style={{ maxWidth: "xs" }}>
         <Box sx={{ maxWidth: "lg" }}>
           <Typography variant="h1" color="primary" marginBottom="20px">
             Women's Sustainability Network

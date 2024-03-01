@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import {
   Card,
-  Box,
   List,
   ListItem,
   CardContent,
@@ -16,19 +15,25 @@ import {
   Grid,
   useMediaQuery,
 } from "@mui/material";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 // import AmalContent from "../../inputs/Amal.json";
 
-const ExpandMore = styled((props) => {
+interface ExpandMoreProps {
+  children: any;
+  id: string;
+  objectPosition: string;
+  expand: boolean;
+  onClick: () => void;
+  "aria-expanded": boolean;
+  "aria-label": string;
+}
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
-})(({ theme, expand }) => ({
+})(({ theme, expand }: any) => ({
   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
   marginLeft: "auto",
   transition: theme.transitions.create("transform", {
@@ -36,16 +41,27 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-const styles = {
-  cardcontent: {
-    padding: 0,
-    "&:last-child": {
-      paddingBottom: 0,
-    },
-  },
-};
+// const ExpandMore = styled((props) => {
+//   const { expand, ...other }: any = props;
+//   return <IconButton {...other} />;
+// })(({ theme, expand }: any) => ({
+//   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+//   marginLeft: "auto",
+//   transition: theme.transitions.create("transform", {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+// }));
 
-export default function ProfileCard(props) {
+// const styles = {
+//   cardcontent: {
+//     padding: 0,
+//     "&:last-child": {
+//       paddingBottom: 0,
+//     },
+//   },
+// };
+
+export default function ProfileCard(props: any) {
   const { persona } = props.persona;
   const { image } = props.persona.image;
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -142,7 +158,7 @@ export default function ProfileCard(props) {
                   onClick={handleExpandClick}
                   aria-expanded={expanded}
                   aria-label="show more"
-                  style={{ paddingTop: "0px", paddingBottom: "0px" }}
+                  // style={{ paddingTop: "0px", paddingBottom: "0px" }}
                 >
                   <ExpandMoreIcon id="dropdown-button-icon" />
                 </ExpandMore>
@@ -162,9 +178,8 @@ export default function ProfileCard(props) {
               justifyContent="center"
             >
               {/* <Grid id="expanded-grid-work-experience" item xs={12} sm={12}> */}
-              {persona.profileFullText.map((key, index) => (
+              {persona.profileFullText.map((key: any, index: any) => (
                 <Grid id="expanded-grid-profile" item xs={12} sm={12} lg={4}>
-                  {console.log(index)}
                   <Typography
                     variant="body1"
                     key={index}
@@ -206,10 +221,10 @@ export default function ProfileCard(props) {
                   Skills
                 </Typography>
                 <List>
-                  {persona.skills.map((key, index) => (
+                  {persona.skills.map((key: any, index: any) => (
                     <ListItem>
                       <Typography
-                        variant="body"
+                        variant="body1"
                         key={index}
                         style={{
                           fontSize: "1.2rem",
@@ -233,14 +248,14 @@ export default function ProfileCard(props) {
                 >
                   Contact Info
                 </Typography>
-                <Typography variant="body" style={{ fontSize: "1.2rem" }}>
+                <Typography variant="body1" style={{ fontSize: "1.2rem" }}>
                   <a href={`mailto:${persona.contactInfo.email}`}>
                     {persona.contactInfo.email}
                   </a>
                 </Typography>
                 <br />
                 <br />
-                <Typography variant="body">
+                <Typography variant="body1">
                   <a
                     href={`${persona.contactInfo.linkedIn}`}
                     target="_blank"

@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./App.css";
-import Home from "./pages/home/Home.js";
-import Story from "./pages/ourStory/Story.js";
+import Home from "./pages/home/Home.tsx";
+import Story from "./pages/ourStory/Story.tsx";
 import ContactUs from "./pages/contactUs/contactUs";
 import { Layout } from "./components/Layout.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

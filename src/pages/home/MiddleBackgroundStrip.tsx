@@ -1,6 +1,6 @@
-import { Typography, Box, CardMedia, Grid, Paper } from "@mui/material";
+import * as React from "react";
+import { Typography, Box, Grid, Paper } from "@mui/material";
 import backgroundGradient from "../../assets/Background gradient strip.png";
-import GroupPhoto from "../../assets/WSN Group photo - Copy.jpg";
 import ImageCarousel from "./ImageCarousel";
 
 export default function MiddleBackgroundStrip() {

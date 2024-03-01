@@ -1,4 +1,5 @@
-import { Typography, CardMedia, Box, Paper, Grid } from "@mui/material";
+import * as React from "react";
+import { Typography, Box, Paper, Grid } from "@mui/material";
 import BackgroundShapes from "../../assets/BackgroundShapesHomepage.png";
 
 export default function HomeOurAim() {

@@ -2,11 +2,6 @@ import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views-react-18-fix";
 import { autoPlay } from "react-swipeable-views-utils";
 import EventPhoto1 from "../../assets/WSNEvent1.jpg";
@@ -35,15 +30,15 @@ function SwipeableTextMobileStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
+  // const handleNext = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  // };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  // const handleBack = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  // };
 
-  const handleStepChange = (step) => {
+  const handleStepChange = (step: any) => {
     setActiveStep(step);
   };
 
@@ -91,6 +86,8 @@ function SwipeableTextMobileStepper() {
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
+        nextButton
+        backButton
       />
     </Box>
   );
