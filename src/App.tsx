@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/home/Home.tsx";
 import Story from "./pages/ourStory/Story.tsx";
 import ContactUs from "./pages/contactUs/contactUs";
+import Register from "./pages/login/Register.tsx";
 import { Layout } from "./components/Layout.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
@@ -29,6 +30,7 @@ function App() {
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/training" element={<Training />} /> */}
               <Route path="/contact" element={<ContactUs />} />
+              <Route path="/register" element={<Register />} />
               {/* <Route path="/testing" element={<testPage />} /> */}
               <Route path="*" element={<NotFound />}></Route>
             </Route>
