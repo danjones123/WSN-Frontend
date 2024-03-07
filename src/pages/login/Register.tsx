@@ -94,7 +94,7 @@ function Register() {
   return (
     <>
       {success ? (
-        <h1>You Logged In</h1>
+        <h1>You Created an Account!</h1>
       ) : (
         <center>
           <section>
