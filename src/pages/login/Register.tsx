@@ -69,7 +69,7 @@ function Register() {
     try {
       console.log("In post");
       const response = await axios.post(
-        "http://localhost:8081/api/v1/auth/register",
+        REGISTER_URL,
         JSON.stringify({ email: user, password: pwd }),
         {
           headers: { "Content-Type": "application/json" },

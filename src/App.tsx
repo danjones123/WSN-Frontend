@@ -12,31 +12,34 @@ import CssBaseline from "@mui/material/CssBaseline";
 import NotFound from "./pages/error/NotFound.js";
 import theme from "./components/Theme.js";
 import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange.js";
+import { AuthProvider } from "./context/AuthProvider.tsx";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <BrowserRouter>
-          <ScrollToTopOnPageChange />
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/story" element={<Story />} />
-              {/* <Route path="/resources" element={<Resources />} />
+          <AuthProvider>
+            <ScrollToTopOnPageChange />
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/story" element={<Story />} />
+                {/* <Route path="/resources" element={<Resources />} />
             <Route path="/events" element={<Events />} /> */}
-              {/* <Route path="/blog" element={<Blog />} /> */}
-              {/* <Route path="/chats" element={<Chats />} />
+                {/* <Route path="/blog" element={<Blog />} /> */}
+                {/* <Route path="/chats" element={<Chats />} />
             <Route path="/conferences" element={<Conferences />} />
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/training" element={<Training />} /> */}
-              <Route path="/contact" element={<ContactUs />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-              {/* <Route path="/testing" element={<testPage />} /> */}
-              <Route path="*" element={<NotFound />}></Route>
-            </Route>
-          </Routes>
+                <Route path="/contact" element={<ContactUs />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                {/* <Route path="/testing" element={<testPage />} /> */}
+                <Route path="*" element={<NotFound />}></Route>
+              </Route>
+            </Routes>
+          </AuthProvider>
         </BrowserRouter>
       </CssBaseline>
     </ThemeProvider>
