@@ -13,6 +13,8 @@ import NotFound from "./pages/error/NotFound.js";
 import theme from "./components/Theme.js";
 import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange.js";
 import { AuthProvider } from "./context/AuthProvider.tsx";
+import RequireAuth from "./components/RequireAuth.jsx";
+import Protected from "./pages/testing/Protected.js";
 
 function App() {
   return (
@@ -25,17 +27,14 @@ function App() {
               <Route element={<Layout />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/story" element={<Story />} />
-                {/* <Route path="/resources" element={<Resources />} />
-            <Route path="/events" element={<Events />} /> */}
-                {/* <Route path="/blog" element={<Blog />} /> */}
-                {/* <Route path="/chats" element={<Chats />} />
-            <Route path="/conferences" element={<Conferences />} />
-            <Route path="/workshops" element={<Workshops />} />
-            <Route path="/training" element={<Training />} /> */}
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
-                {/* <Route path="/testing" element={<testPage />} /> */}
+                <Route
+                  element={<RequireAuth allowedRoles={["USER", "ADMIN"]} />}
+                >
+                  <Route path="/protected" element={<Protected />} />
+                </Route>
                 <Route path="*" element={<NotFound />}></Route>
               </Route>
             </Routes>
