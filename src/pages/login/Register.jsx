@@ -14,8 +14,8 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = "/api/v1/auth/register";
 
 function Register() {
-  const userRef: any = useRef();
-  const errRef: any = useRef();
+  const userRef = useRef();
+  const errRef = useRef();
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);

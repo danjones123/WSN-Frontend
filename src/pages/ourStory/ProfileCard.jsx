@@ -20,20 +20,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 // import AmalContent from "../../inputs/Amal.json";
 
-interface ExpandMoreProps {
-  children: any;
-  id: string;
-  objectPosition: string;
-  expand: boolean;
-  onClick: () => void;
-  "aria-expanded": boolean;
-  "aria-label": string;
-}
-
-const ExpandMore = styled((props: ExpandMoreProps) => {
+const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
-})(({ theme, expand }: any) => ({
+})(({ theme, expand }) => ({
   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
   marginLeft: "auto",
   transition: theme.transitions.create("transform", {
@@ -61,7 +51,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 //   },
 // };
 
-export default function ProfileCard(props: any) {
+export default function ProfileCard(props) {
   const { persona } = props.persona;
   const { image } = props.persona.image;
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -178,7 +168,7 @@ export default function ProfileCard(props: any) {
               justifyContent="center"
             >
               {/* <Grid id="expanded-grid-work-experience" item xs={12} sm={12}> */}
-              {persona.profileFullText.map((key: any, index: any) => (
+              {persona.profileFullText.map((key, index) => (
                 <Grid id="expanded-grid-profile" item xs={12} sm={12} lg={4}>
                   <Typography
                     variant="body1"
@@ -221,7 +211,7 @@ export default function ProfileCard(props: any) {
                   Skills
                 </Typography>
                 <List>
-                  {persona.skills.map((key: any, index: any) => (
+                  {persona.skills.map((key, index) => (
                     <ListItem>
                       <Typography
                         variant="body1"

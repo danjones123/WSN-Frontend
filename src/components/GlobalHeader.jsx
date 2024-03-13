@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/LogoNoBg.png";
 
-const Header = (props: any) => {
+const Header = (props) => {
   const { title } = props;
   const nav = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);

@@ -9,19 +9,21 @@ import axios from "../../api/axios";
 const LOGIN_URL = "/api/v1/auth/authenticate";
 
 function Login() {
-  const { setAuth }: any = useAuth();
+  const { setAuth } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.form?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
-  const userRef: any = useRef();
-  const errRef: any = useRef();
+  const userRef = useRef();
+  const errRef = useRef();
 
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
+
+  console.log("from: " + from);
+  console.log("location: " + location.state);
 
   useEffect(() => {
     userRef.current.focus();
@@ -47,6 +49,7 @@ function Login() {
       console.log(JSON.stringify(response?.data));
       const token = response?.data?.token;
       const role = response?.data?.userRole;
+      console.log(role);
       //setAuth in context
       setAuth({ user, pwd, role, token });
       setUser("");
