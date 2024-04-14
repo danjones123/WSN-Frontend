@@ -5,7 +5,7 @@ const useRefreshToken = () => {
   const { setAuth } = useAuth();
 
   const refresh = async () => {
-    const response = await axios.get("api/vi/auth/refresh", {
+    const response = await axios.post("api/v1/auth/refresh", {
       withCredentials: true,
     });
     setAuth((prev) => {
@@ -19,3 +19,6 @@ const useRefreshToken = () => {
 };
 
 export default useRefreshToken;
+
+//TODO - Read the post from OAuth about sending token
+//Either get the refresh token and store in a cookie or send it as a cookie from backend

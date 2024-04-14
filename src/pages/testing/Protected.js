@@ -2,12 +2,12 @@ import Users from "../../components/Users";
 
 function Protected() {
   return (
-    <centre>
+    <center>
       <div>
-        <h1>You need to be logged in to see this</h1>
+        <h1>You are logged </h1>
         <Users />
       </div>
-    </centre>
+    </center>
   );
 }
 export default Protected;

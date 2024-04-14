@@ -22,8 +22,8 @@ function Login() {
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
-  console.log("from: " + from);
-  console.log("location: " + location.state);
+  // console.log("from: " + from);
+  // console.log("location: " + location.state);
 
   useEffect(() => {
     userRef.current.focus();
@@ -35,7 +35,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user, pwd);
+    // console.log(user, pwd);
 
     try {
       const response = await axios.post(
@@ -47,11 +47,11 @@ function Login() {
         }
       );
       console.log(JSON.stringify(response?.data));
-      const token = response?.data?.token;
+      const accessToken = response?.data?.accessToken;
       const role = response?.data?.userRole;
       console.log(role);
       //setAuth in context
-      setAuth({ user, pwd, role, token });
+      setAuth({ user, pwd, role, accessToken });
       setUser("");
       setPwd("");
       navigate(from, { replace: true });
