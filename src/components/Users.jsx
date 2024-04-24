@@ -1,28 +1,27 @@
 import { useState, useEffect } from "react";
-import axios from "../api/axios";
-import useRefreshToken from "../hooks/useRefreshToken";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import useAuth from "../hooks/useAuth";
 
 const Users = () => {
   const [users, setUsers] = useState();
-  const refresh = useRefreshToken();
-  const { auth } = useAuth();
+  const axiosPrivate = useAxiosPrivate();
+  // const { auth } = useAuth();
 
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
 
     const getUsers = async () => {
-      console.log(auth?.accessToken);
-      const token = auth?.accessToken;
-      const headers = { Authorization: `Bearer ${token}` };
+      // console.log(auth?.accessToken);
+      // const token = auth?.accessToken;
+      // const headers = { Authorization: `Bearer ${token}` };
       try {
-        const response = await axios.get(
-          "/api/v1/controller/users",
+        const response = await axiosPrivate.get(
+          "/api/v1/controller/users"
           // {
           //   signal: controller.signal,
           // },
-          { headers }
+          // { headers }
         );
         console.log(response.data);
         isMounted && setUsers(response.data);
@@ -40,11 +39,16 @@ const Users = () => {
   }, []);
 
   const test = async () => {
-    console.log(auth?.accessToken);
-    const token = auth?.accessToken;
-    const headers = { Authorization: `Bearer ${token}` };
+    // console.log(auth?.accessToken);
+    // const token = auth?.accessToken;
+    // const headers = { Authorization: `Bearer ${token}` };
     try {
-      const response = await axios.get("/api/v1/controller", { headers });
+      const response = await axiosPrivate.get(
+        "/api/v1/controller"
+        // , {
+        //   headers,
+        // }
+      );
       console.log(response.data);
     } catch (err) {
       console.log(err);
@@ -63,7 +67,6 @@ const Users = () => {
       ) : (
         <p>No users to display</p>
       )}
-      <button onClick={() => refresh()}>Refresh</button>
       <button onClick={() => test()}>test</button>
     </article>
   );
