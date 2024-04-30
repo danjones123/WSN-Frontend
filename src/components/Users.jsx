@@ -17,10 +17,10 @@ const Users = () => {
       // const headers = { Authorization: `Bearer ${token}` };
       try {
         const response = await axiosPrivate.get(
-          "/api/v1/controller/users"
-          // {
-          //   signal: controller.signal,
-          // },
+          "/api/v1/controller/users",
+          {
+            signal: controller.signal,
+          }
           // { headers }
         );
         console.log(response.data);

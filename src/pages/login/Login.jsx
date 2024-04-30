@@ -2,6 +2,7 @@ import * as React from "react";
 import { useRef, useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Header from "../../components/GlobalHeader";
 
 import "./Register.css";
 import axios from "../../api/axios";
@@ -72,6 +73,7 @@ function Login() {
 
   return (
     <center>
+      <Header title="Login" />
       <section>
         <p
           ref={errRef}
