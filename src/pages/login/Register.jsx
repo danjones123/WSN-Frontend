@@ -7,6 +7,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Header from "../../components/GlobalHeader";
 import axios from "../../api/axios";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -93,6 +94,7 @@ function Register() {
 
   return (
     <>
+      <Header title="Register" />
       {success ? (
         <h1>You Created an Account!</h1>
       ) : (
@@ -227,7 +229,7 @@ function Register() {
                 Already registered?
                 <br />
                 <span className="line">
-                  <a href="#">Sign In</a>
+                  <a href="/login">Sign In</a>
                 </span>
               </p>
             </form>

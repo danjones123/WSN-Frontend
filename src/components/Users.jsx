@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import { useNavigate, useLocation } from "react-router";
 import useAuth from "../hooks/useAuth";
 
 const Users = () => {
   const [users, setUsers] = useState();
   const axiosPrivate = useAxiosPrivate();
   // const { auth } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
 
     const getUsers = async () => {
-      // console.log(auth?.accessToken);
-      // const token = auth?.accessToken;
-      // const headers = { Authorization: `Bearer ${token}` };
       try {
+        console.log(controller.signal);
+        console.log("Sending request for users with token");
         const response = await axiosPrivate.get(
           "/api/v1/controller/users",
           {
@@ -27,6 +29,9 @@ const Users = () => {
         isMounted && setUsers(response.data);
       } catch (err) {
         console.log(err);
+        if (err?.code !== "ERR_CANCELED") {
+          navigate("/login", { state: { from: location }, replace: true });
+        }
       }
     };
 
@@ -38,22 +43,22 @@ const Users = () => {
     };
   }, []);
 
-  const test = async () => {
-    // console.log(auth?.accessToken);
-    // const token = auth?.accessToken;
-    // const headers = { Authorization: `Bearer ${token}` };
-    try {
-      const response = await axiosPrivate.get(
-        "/api/v1/controller"
-        // , {
-        //   headers,
-        // }
-      );
-      console.log(response.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const test = async () => {
+  //   // console.log(auth?.accessToken);
+  //   // const token = auth?.accessToken;
+  //   // const headers = { Authorization: `Bearer ${token}` };
+  //   try {
+  //     const response = await axiosPrivate.get(
+  //       "/api/v1/controller"
+  //       // , {
+  //       //   headers,
+  //       // }
+  //     );
+  //     console.log(response.data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <article>
@@ -67,7 +72,7 @@ const Users = () => {
       ) : (
         <p>No users to display</p>
       )}
-      <button onClick={() => test()}>test</button>
+      {/* <button onClick={() => test()}>test</button> */}
     </article>
   );
 };

@@ -22,10 +22,16 @@ const useAxiosPrivate = () => {
       (response) => response,
       async (error) => {
         const prevRequest = error?.config;
+        console.log(
+          "Inside error response trackers. request already sent? " +
+            prevRequest.sent
+        );
         if (error?.response?.status === 403 && !prevRequest?.sent) {
           prevRequest.sent = true;
+          console.log("INSIDE INNER REQUEST LOOP " + prevRequest.sent);
           const newAccessToken = await refresh();
-          prevRequest.headers["Authorizaiton"] = `Bearer ${newAccessToken}`;
+          console.log("New access token: " + newAccessToken);
+          prevRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
           return axiosPrivate(prevRequest);
         }
         return Promise.reject(error);
