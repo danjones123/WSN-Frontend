@@ -15,6 +15,7 @@ import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange.js";
 import { AuthProvider } from "./context/AuthProvider.jsx";
 import RequireAuth from "./components/RequireAuth.jsx";
 import Protected from "./pages/testing/Protected.js";
+import PersistLogin from "./components/PersistLogin.jsx";
 
 function App() {
   return (
@@ -30,8 +31,10 @@ function App() {
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
-                <Route element={<RequireAuth allowedRoles={["USER"]} />}>
-                  <Route path="/protected" element={<Protected />} />
+                <Route element={<PersistLogin />}>
+                  <Route element={<RequireAuth allowedRoles={["USER"]} />}>
+                    <Route path="/protected" element={<Protected />} />
+                  </Route>
                 </Route>
                 <Route path="*" element={<NotFound />}></Route>
               </Route>

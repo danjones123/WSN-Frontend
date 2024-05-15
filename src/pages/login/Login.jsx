@@ -10,7 +10,7 @@ import axios from "../../api/axios";
 const LOGIN_URL = "/api/v1/auth/authenticate";
 
 function Login() {
-  const { setAuth } = useAuth();
+  const { setAuth, persist, setPersist } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -71,6 +71,14 @@ function Login() {
     }
   };
 
+  const togglePersist = () => {
+    setPersist((prev) => !prev);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("persist", persist);
+  }, [persist]);
+
   return (
     <center>
       <Header title="Login" />
@@ -104,6 +112,15 @@ function Login() {
             required
           />
           <button>Sign In</button>
+          <div className="persistCheck">
+            <input
+              type="checkbox"
+              id="persist"
+              onChange={togglePersist}
+              checked={persist}
+            />
+            <label htmlFor="persist">Trust This Device</label>
+          </div>
           <p>
             Don't have an Account?
             <br />
