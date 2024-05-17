@@ -26,6 +26,8 @@ const useRefreshToken = () => {
     });
 
     return response.data.accessToken;
+
+    //TODO - If a duplicate refresh token reponse sent then needs to handle and try the auth token again
   };
 
   return refresh;

@@ -15,7 +15,7 @@ import MiddleBackgroundStrip from "./MiddleBackgroundStrip";
 import HomeOurAim from "./HomeOurAim";
 
 export default function Home() {
-  const nav = useNavigate();
+  // const nav = useNavigate();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   // const isMediumScreen = useMediaQuery(
   //   "(min-width: 601px) and (max-width: 1000px)"
