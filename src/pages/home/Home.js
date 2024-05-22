@@ -37,7 +37,7 @@ export default function Home() {
         <iframe
           width={isSmallScreen ? "320" : "560"}
           height={isSmallScreen ? "180" : "315"}
-          src="https://www.youtube.com/embed/jNQXAC9IVRw?si=W749W8CZK_5IkNBX"
+          src="https://www.youtube.com/embed/_rssD1F2mVc?si=l05MJQl5cAjlLomb"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
