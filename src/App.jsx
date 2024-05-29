@@ -26,12 +26,13 @@ function App() {
             <ScrollToTopOnPageChange />
             <Routes>
               <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/story" element={<Story />} />
-                <Route path="/contact" element={<ContactUs />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
                 <Route element={<PersistLogin />}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/story" element={<Story />} />
+                  <Route path="/contact" element={<ContactUs />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
+
                   <Route element={<RequireAuth allowedRoles={["USER"]} />}>
                     <Route path="/protected" element={<Protected />} />
                   </Route>
